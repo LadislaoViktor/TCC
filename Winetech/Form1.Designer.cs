@@ -99,6 +99,7 @@
             this.Controls.Add(this.txtBxLogin);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmLogin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Winetech";
             this.TransparencyKey = System.Drawing.Color.Transparent;
             this.ResumeLayout(false);
