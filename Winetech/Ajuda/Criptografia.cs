@@ -1,6 +1,5 @@
 ﻿using System;
 using CryptSharp;
-using System.
 
 namespace Winetech.Ajuda
 {
