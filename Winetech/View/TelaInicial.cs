@@ -16,5 +16,10 @@ namespace Winetech.View
         {
             InitializeComponent();
         }
+
+        private void btnUsuarios_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

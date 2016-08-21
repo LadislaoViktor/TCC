@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Winetech.View;
 
 namespace Winetech
 {
@@ -23,7 +24,9 @@ namespace Winetech
             if (CL.fazerLoginControl(txtBxLogin.ToString(), txtBxSenha.ToString()) == true)
             {
                 MessageBox.Show("Login efetuado com sucesso!", "Informação!", MessageBoxButtons.OK);
-                //Chamar tela inicial.
+                TelaInicial T = new TelaInicial();
+                T.Show();
+
             }
             else
                 MessageBox.Show("Verifique login e senha!", "Acesso negado!", MessageBoxButtons.OK);
