@@ -22,5 +22,10 @@ namespace Winetech.Model
             this.senha = senha;
 
         }
+        private bool validarLogin(string login, string senha)
+        {
+
+            return true;
+        }  
     }
 }

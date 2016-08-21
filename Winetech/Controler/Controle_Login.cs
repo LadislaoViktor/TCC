@@ -4,17 +4,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Winetech.Controler;
+using Winetech.WinetechDataSetTableAdapters;
+using System.Windows.Forms;
 
 namespace Winetech.Controler
 {
     class Controle_Login
     {
-        protected bool fazerLoginControl(string login, string senha)
+        public bool fazerLoginControl(string login, string senha)
         {
-            //if(validarLogin(login ,senha))
-            return true;
-            //else
-            //return false;
+            string testaLogin=login ;
+            if(testaLogin == login)
+            {
+                return true;
+            }
+            else
+            return false;
         }
     }
 }

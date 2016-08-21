@@ -40,14 +40,15 @@
             // 
             this.txtBxLogin.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.txtBxLogin.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtBxLogin.Location = new System.Drawing.Point(141, 31);
+            this.txtBxLogin.Location = new System.Drawing.Point(135, 38);
             this.txtBxLogin.Name = "txtBxLogin";
             this.txtBxLogin.Size = new System.Drawing.Size(100, 20);
             this.txtBxLogin.TabIndex = 0;
             // 
             // txtBxSenha
             // 
-            this.txtBxSenha.Location = new System.Drawing.Point(141, 89);
+            this.txtBxSenha.AcceptsReturn = true;
+            this.txtBxSenha.Location = new System.Drawing.Point(135, 92);
             this.txtBxSenha.Name = "txtBxSenha";
             this.txtBxSenha.PasswordChar = '*';
             this.txtBxSenha.Size = new System.Drawing.Size(100, 20);
@@ -58,7 +59,7 @@
             this.lblLogin.AutoSize = true;
             this.lblLogin.BackColor = System.Drawing.Color.Transparent;
             this.lblLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLogin.Location = new System.Drawing.Point(52, 34);
+            this.lblLogin.Location = new System.Drawing.Point(30, 34);
             this.lblLogin.Name = "lblLogin";
             this.lblLogin.Size = new System.Drawing.Size(62, 24);
             this.lblLogin.TabIndex = 3;
@@ -69,7 +70,7 @@
             this.lblSenha.AutoSize = true;
             this.lblSenha.BackColor = System.Drawing.Color.Transparent;
             this.lblSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSenha.Location = new System.Drawing.Point(52, 92);
+            this.lblSenha.Location = new System.Drawing.Point(30, 92);
             this.lblSenha.Name = "lblSenha";
             this.lblSenha.Size = new System.Drawing.Size(70, 24);
             this.lblSenha.TabIndex = 4;
@@ -77,7 +78,9 @@
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(102, 161);
+            this.btnLogin.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btnLogin.Location = new System.Drawing.Point(34, 154);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(75, 23);
             this.btnLogin.TabIndex = 2;
@@ -89,17 +92,20 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
             this.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.ClientSize = new System.Drawing.Size(284, 209);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.lblSenha);
             this.Controls.Add(this.lblLogin);
             this.Controls.Add(this.txtBxSenha);
             this.Controls.Add(this.txtBxLogin);
+            this.HelpButton = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "frmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Winetech";

@@ -20,6 +20,13 @@ namespace Winetech
         private void btnLogin_Click(object sender, EventArgs e)
         {
             Controler.Controle_Login CL = new Controler.Controle_Login();
+            if (CL.fazerLoginControl(txtBxLogin.ToString(), txtBxSenha.ToString()) == true)
+            {
+                MessageBox.Show("Login efetuado com sucesso!", "Informação!", MessageBoxButtons.OK);
+                //Chamar tela inicial.
+            }
+            else
+                MessageBox.Show("Verifique login e senha!", "Acesso negado!", MessageBoxButtons.OK);
         }
 
         private void frmLogin_Load(object sender, EventArgs e)
