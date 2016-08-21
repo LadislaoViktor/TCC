@@ -72,6 +72,12 @@
     <Compile Include="Ajuda\Criptografia.cs" />
     <Compile Include="Controler\ControleUsuarios.cs" />
     <Compile Include="Controler\Controle_Login.cs" />
+    <Compile Include="View\ClientePF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ClientePF.Designer.cs">
+      <DependentUpon>ClientePF.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Controle de Usuários.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,6 +101,12 @@
     <Compile Include="Model\Usuario.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="View\PesquisarUsuários.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\PesquisarUsuários.Designer.cs">
+      <DependentUpon>PesquisarUsuários.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\TelaInicial.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -106,6 +118,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>WinetechDataSet.xsd</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="View\ClientePF.resx">
+      <DependentUpon>ClientePF.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Controle de Usuários.resx">
       <DependentUpon>Controle de Usuários.cs</DependentUpon>
     </EmbeddedResource>
@@ -121,6 +136,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="View\PesquisarUsuários.resx">
+      <DependentUpon>PesquisarUsuários.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\TelaInicial.resx">
       <DependentUpon>TelaInicial.cs</DependentUpon>
     </EmbeddedResource>

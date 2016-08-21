@@ -13,6 +13,7 @@ namespace Winetech.Controler
             char statusUsuário,int codigoPerfil,
             string descricaoPerfil)
         {
+
             return true;
         }
     }
