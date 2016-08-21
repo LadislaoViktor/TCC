@@ -10,7 +10,6 @@ namespace Winetech.Ajuda
         }
         public static bool Compara(string senha,string hash) {
             return Crypter.CheckPassword(senha, hash);
-        }
-        
+        }        
     }
 }

@@ -21,5 +21,10 @@ namespace Winetech
         {
             Controler.Controle_Login CL = new Controler.Controle_Login();
         }
+
+        private void frmLogin_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
