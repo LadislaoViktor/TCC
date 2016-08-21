@@ -71,7 +71,6 @@
   <ItemGroup>
     <Compile Include="Ajuda\Criptografia.cs" />
     <Compile Include="Controler\Controle_Login.cs" />
-    <Compile Include="Database\Conexao.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
