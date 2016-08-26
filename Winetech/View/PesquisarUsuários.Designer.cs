@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.lblPesquisarUsuario = new System.Windows.Forms.Label();
+            this.lblNome = new System.Windows.Forms.Label();
             this.txtBxPesquisarUsuarios = new System.Windows.Forms.TextBox();
             this.dtGdVDadosUsuários = new System.Windows.Forms.DataGridView();
             this.winetechDataSet = new Winetech.WinetechDataSet();
@@ -48,14 +48,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
-            // lblPesquisarUsuario
+            // lblNome
             // 
-            this.lblPesquisarUsuario.AutoSize = true;
-            this.lblPesquisarUsuario.Location = new System.Drawing.Point(24, 13);
-            this.lblPesquisarUsuario.Name = "lblPesquisarUsuario";
-            this.lblPesquisarUsuario.Size = new System.Drawing.Size(53, 13);
-            this.lblPesquisarUsuario.TabIndex = 0;
-            this.lblPesquisarUsuario.Text = "Pesquisar";
+            this.lblNome.AutoSize = true;
+            this.lblNome.Location = new System.Drawing.Point(24, 13);
+            this.lblNome.Name = "lblNome";
+            this.lblNome.Size = new System.Drawing.Size(38, 13);
+            this.lblNome.TabIndex = 0;
+            this.lblNome.Text = "Nome:";
             // 
             // txtBxPesquisarUsuarios
             // 
@@ -157,7 +157,7 @@
             this.Controls.Add(this.btnPesquisarUsuarios);
             this.Controls.Add(this.dtGdVDadosUsuários);
             this.Controls.Add(this.txtBxPesquisarUsuarios);
-            this.Controls.Add(this.lblPesquisarUsuario);
+            this.Controls.Add(this.lblNome);
             this.Name = "frmPesquisarUsuários";
             this.Text = "Pesquisar Usuários";
             this.Load += new System.EventHandler(this.frmPesquisarUsuários_Load);
@@ -171,7 +171,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Label lblPesquisarUsuario;
+        private System.Windows.Forms.Label lblNome;
         private System.Windows.Forms.TextBox txtBxPesquisarUsuarios;
         private System.Windows.Forms.DataGridView dtGdVDadosUsuários;
         private WinetechDataSet winetechDataSet;

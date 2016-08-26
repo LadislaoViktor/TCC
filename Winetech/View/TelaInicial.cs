@@ -21,5 +21,10 @@ namespace Winetech.View
         {
 
         }
+
+        private void btnClientes_Click(object sender, EventArgs e)
+        {
+            ClientePF C = new ClientePF();
+        }
     }
 }

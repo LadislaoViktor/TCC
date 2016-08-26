@@ -48,7 +48,6 @@
             this.winetechDataSet = new Winetech.WinetechDataSet();
             this.enderecoClienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.enderecoClienteTableAdapter = new Winetech.WinetechDataSetTableAdapters.enderecoClienteTableAdapter();
-            this.fkCodigoEnderecoClienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.clienteTableAdapter = new Winetech.WinetechDataSetTableAdapters.clienteTableAdapter();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
@@ -67,6 +66,7 @@
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.fkCodigoEnderecoClienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.winetechDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.enderecoClienteBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fkCodigoEnderecoClienteBindingSource)).BeginInit();
@@ -229,11 +229,6 @@
             // 
             this.enderecoClienteTableAdapter.ClearBeforeFill = true;
             // 
-            // fkCodigoEnderecoClienteBindingSource
-            // 
-            this.fkCodigoEnderecoClienteBindingSource.DataMember = "fkCodigoEnderecoCliente";
-            this.fkCodigoEnderecoClienteBindingSource.DataSource = this.enderecoClienteBindingSource;
-            // 
             // clienteTableAdapter
             // 
             this.clienteTableAdapter.ClearBeforeFill = true;
@@ -369,6 +364,11 @@
             this.button2.Text = "Pesquisar";
             this.button2.UseVisualStyleBackColor = true;
             // 
+            // fkCodigoEnderecoClienteBindingSource
+            // 
+            this.fkCodigoEnderecoClienteBindingSource.DataMember = "fkCodigoEnderecoCliente";
+            this.fkCodigoEnderecoClienteBindingSource.DataSource = this.enderecoClienteBindingSource;
+            // 
             // ClientePF
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -408,7 +408,7 @@
             this.Controls.Add(this.lblRG);
             this.Controls.Add(this.lblNomeCompleto);
             this.Name = "ClientePF";
-            this.Text = "ClientePF";
+            this.Text = "Cliente Pessoa Física";
             this.Load += new System.EventHandler(this.ClientePF_Load);
             ((System.ComponentModel.ISupportInitialize)(this.winetechDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.enderecoClienteBindingSource)).EndInit();
