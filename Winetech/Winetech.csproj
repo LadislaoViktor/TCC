@@ -101,6 +101,12 @@
     <Compile Include="Model\Usuario.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="View\Fornecedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Fornecedor.Designer.cs">
+      <DependentUpon>Fornecedor.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\PesquisarCliente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -154,6 +160,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="View\Fornecedor.resx">
+      <DependentUpon>Fornecedor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\PesquisarCliente.resx">
       <DependentUpon>PesquisarCliente.cs</DependentUpon>
     </EmbeddedResource>
