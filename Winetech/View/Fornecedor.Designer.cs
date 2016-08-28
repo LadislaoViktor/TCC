@@ -44,12 +44,21 @@
             this.lblComplemento = new System.Windows.Forms.Label();
             this.btnInserir = new System.Windows.Forms.Button();
             this.btnPesquisar = new System.Windows.Forms.Button();
+            this.txtBxCodigo = new System.Windows.Forms.TextBox();
+            this.txtBxCNPJ = new System.Windows.Forms.TextBox();
+            this.txtBxRazaoSocial = new System.Windows.Forms.TextBox();
+            this.txtBxNomeFantasia = new System.Windows.Forms.TextBox();
+            this.txtBxEmail = new System.Windows.Forms.TextBox();
+            this.txtBxTelefone = new System.Windows.Forms.TextBox();
+            this.txtBxEstado = new System.Windows.Forms.TextBox();
+            this.txtBxCidade = new System.Windows.Forms.TextBox();
+            this.txtBxBairro = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // lblCodigo
             // 
             this.lblCodigo.AutoSize = true;
-            this.lblCodigo.Location = new System.Drawing.Point(13, 22);
+            this.lblCodigo.Location = new System.Drawing.Point(12, 22);
             this.lblCodigo.Name = "lblCodigo";
             this.lblCodigo.Size = new System.Drawing.Size(43, 13);
             this.lblCodigo.TabIndex = 0;
@@ -58,7 +67,7 @@
             // lblCNPJ
             // 
             this.lblCNPJ.AutoSize = true;
-            this.lblCNPJ.Location = new System.Drawing.Point(286, 22);
+            this.lblCNPJ.Location = new System.Drawing.Point(283, 22);
             this.lblCNPJ.Name = "lblCNPJ";
             this.lblCNPJ.Size = new System.Drawing.Size(37, 13);
             this.lblCNPJ.TabIndex = 1;
@@ -67,7 +76,7 @@
             // lblRazaoSocial
             // 
             this.lblRazaoSocial.AutoSize = true;
-            this.lblRazaoSocial.Location = new System.Drawing.Point(16, 64);
+            this.lblRazaoSocial.Location = new System.Drawing.Point(11, 61);
             this.lblRazaoSocial.Name = "lblRazaoSocial";
             this.lblRazaoSocial.Size = new System.Drawing.Size(73, 13);
             this.lblRazaoSocial.TabIndex = 2;
@@ -76,7 +85,7 @@
             // lblNomeFantasia
             // 
             this.lblNomeFantasia.AutoSize = true;
-            this.lblNomeFantasia.Location = new System.Drawing.Point(19, 104);
+            this.lblNomeFantasia.Location = new System.Drawing.Point(11, 104);
             this.lblNomeFantasia.Name = "lblNomeFantasia";
             this.lblNomeFantasia.Size = new System.Drawing.Size(84, 13);
             this.lblNomeFantasia.TabIndex = 3;
@@ -85,7 +94,7 @@
             // lblEmail
             // 
             this.lblEmail.AutoSize = true;
-            this.lblEmail.Location = new System.Drawing.Point(22, 150);
+            this.lblEmail.Location = new System.Drawing.Point(11, 149);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(35, 13);
             this.lblEmail.TabIndex = 4;
@@ -94,7 +103,7 @@
             // lblTelefone
             // 
             this.lblTelefone.AutoSize = true;
-            this.lblTelefone.Location = new System.Drawing.Point(22, 181);
+            this.lblTelefone.Location = new System.Drawing.Point(7, 181);
             this.lblTelefone.Name = "lblTelefone";
             this.lblTelefone.Size = new System.Drawing.Size(52, 13);
             this.lblTelefone.TabIndex = 5;
@@ -103,7 +112,7 @@
             // lblStatus
             // 
             this.lblStatus.AutoSize = true;
-            this.lblStatus.Location = new System.Drawing.Point(25, 224);
+            this.lblStatus.Location = new System.Drawing.Point(11, 222);
             this.lblStatus.Name = "lblStatus";
             this.lblStatus.Size = new System.Drawing.Size(40, 13);
             this.lblStatus.TabIndex = 6;
@@ -112,7 +121,7 @@
             // lblEstado
             // 
             this.lblEstado.AutoSize = true;
-            this.lblEstado.Location = new System.Drawing.Point(28, 278);
+            this.lblEstado.Location = new System.Drawing.Point(8, 264);
             this.lblEstado.Name = "lblEstado";
             this.lblEstado.Size = new System.Drawing.Size(43, 13);
             this.lblEstado.TabIndex = 7;
@@ -121,7 +130,7 @@
             // lblCidade
             // 
             this.lblCidade.AutoSize = true;
-            this.lblCidade.Location = new System.Drawing.Point(198, 278);
+            this.lblCidade.Location = new System.Drawing.Point(225, 274);
             this.lblCidade.Name = "lblCidade";
             this.lblCidade.Size = new System.Drawing.Size(43, 13);
             this.lblCidade.TabIndex = 8;
@@ -130,7 +139,7 @@
             // lblBairro
             // 
             this.lblBairro.AutoSize = true;
-            this.lblBairro.Location = new System.Drawing.Point(344, 278);
+            this.lblBairro.Location = new System.Drawing.Point(389, 274);
             this.lblBairro.Name = "lblBairro";
             this.lblBairro.Size = new System.Drawing.Size(37, 13);
             this.lblBairro.TabIndex = 9;
@@ -139,7 +148,7 @@
             // lblCEP
             // 
             this.lblCEP.AutoSize = true;
-            this.lblCEP.Location = new System.Drawing.Point(28, 325);
+            this.lblCEP.Location = new System.Drawing.Point(15, 307);
             this.lblCEP.Name = "lblCEP";
             this.lblCEP.Size = new System.Drawing.Size(31, 13);
             this.lblCEP.TabIndex = 10;
@@ -166,7 +175,7 @@
             // lblComplemento
             // 
             this.lblComplemento.AutoSize = true;
-            this.lblComplemento.Location = new System.Drawing.Point(31, 382);
+            this.lblComplemento.Location = new System.Drawing.Point(10, 364);
             this.lblComplemento.Name = "lblComplemento";
             this.lblComplemento.Size = new System.Drawing.Size(74, 13);
             this.lblComplemento.TabIndex = 13;
@@ -190,11 +199,83 @@
             this.btnPesquisar.Text = "Pesquisar";
             this.btnPesquisar.UseVisualStyleBackColor = true;
             // 
+            // txtBxCodigo
+            // 
+            this.txtBxCodigo.Location = new System.Drawing.Point(90, 19);
+            this.txtBxCodigo.Name = "txtBxCodigo";
+            this.txtBxCodigo.Size = new System.Drawing.Size(100, 20);
+            this.txtBxCodigo.TabIndex = 16;
+            // 
+            // txtBxCNPJ
+            // 
+            this.txtBxCNPJ.Location = new System.Drawing.Point(347, 19);
+            this.txtBxCNPJ.Name = "txtBxCNPJ";
+            this.txtBxCNPJ.Size = new System.Drawing.Size(100, 20);
+            this.txtBxCNPJ.TabIndex = 17;
+            // 
+            // txtBxRazaoSocial
+            // 
+            this.txtBxRazaoSocial.Location = new System.Drawing.Point(90, 61);
+            this.txtBxRazaoSocial.Name = "txtBxRazaoSocial";
+            this.txtBxRazaoSocial.Size = new System.Drawing.Size(442, 20);
+            this.txtBxRazaoSocial.TabIndex = 18;
+            // 
+            // txtBxNomeFantasia
+            // 
+            this.txtBxNomeFantasia.Location = new System.Drawing.Point(90, 104);
+            this.txtBxNomeFantasia.Name = "txtBxNomeFantasia";
+            this.txtBxNomeFantasia.Size = new System.Drawing.Size(442, 20);
+            this.txtBxNomeFantasia.TabIndex = 19;
+            // 
+            // txtBxEmail
+            // 
+            this.txtBxEmail.Location = new System.Drawing.Point(90, 149);
+            this.txtBxEmail.Name = "txtBxEmail";
+            this.txtBxEmail.Size = new System.Drawing.Size(220, 20);
+            this.txtBxEmail.TabIndex = 20;
+            // 
+            // txtBxTelefone
+            // 
+            this.txtBxTelefone.Location = new System.Drawing.Point(90, 181);
+            this.txtBxTelefone.Name = "txtBxTelefone";
+            this.txtBxTelefone.Size = new System.Drawing.Size(220, 20);
+            this.txtBxTelefone.TabIndex = 21;
+            // 
+            // txtBxEstado
+            // 
+            this.txtBxEstado.Location = new System.Drawing.Point(90, 271);
+            this.txtBxEstado.Name = "txtBxEstado";
+            this.txtBxEstado.Size = new System.Drawing.Size(100, 20);
+            this.txtBxEstado.TabIndex = 22;
+            // 
+            // txtBxCidade
+            // 
+            this.txtBxCidade.Location = new System.Drawing.Point(274, 271);
+            this.txtBxCidade.Name = "txtBxCidade";
+            this.txtBxCidade.Size = new System.Drawing.Size(100, 20);
+            this.txtBxCidade.TabIndex = 23;
+            // 
+            // txtBxBairro
+            // 
+            this.txtBxBairro.Location = new System.Drawing.Point(432, 271);
+            this.txtBxBairro.Name = "txtBxBairro";
+            this.txtBxBairro.Size = new System.Drawing.Size(100, 20);
+            this.txtBxBairro.TabIndex = 24;
+            // 
             // Fornecedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(544, 433);
+            this.Controls.Add(this.txtBxBairro);
+            this.Controls.Add(this.txtBxCidade);
+            this.Controls.Add(this.txtBxEstado);
+            this.Controls.Add(this.txtBxTelefone);
+            this.Controls.Add(this.txtBxEmail);
+            this.Controls.Add(this.txtBxNomeFantasia);
+            this.Controls.Add(this.txtBxRazaoSocial);
+            this.Controls.Add(this.txtBxCNPJ);
+            this.Controls.Add(this.txtBxCodigo);
             this.Controls.Add(this.btnPesquisar);
             this.Controls.Add(this.btnInserir);
             this.Controls.Add(this.lblComplemento);
@@ -236,5 +317,14 @@
         private System.Windows.Forms.Label lblComplemento;
         private System.Windows.Forms.Button btnInserir;
         private System.Windows.Forms.Button btnPesquisar;
+        private System.Windows.Forms.TextBox txtBxCodigo;
+        private System.Windows.Forms.TextBox txtBxCNPJ;
+        private System.Windows.Forms.TextBox txtBxRazaoSocial;
+        private System.Windows.Forms.TextBox txtBxNomeFantasia;
+        private System.Windows.Forms.TextBox txtBxEmail;
+        private System.Windows.Forms.TextBox txtBxTelefone;
+        private System.Windows.Forms.TextBox txtBxEstado;
+        private System.Windows.Forms.TextBox txtBxCidade;
+        private System.Windows.Forms.TextBox txtBxBairro;
     }
 }

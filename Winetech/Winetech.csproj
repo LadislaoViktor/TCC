@@ -72,11 +72,23 @@
     <Compile Include="Ajuda\Criptografia.cs" />
     <Compile Include="Controler\ControleUsuarios.cs" />
     <Compile Include="Controler\Controle_Login.cs" />
+    <Compile Include="View\CestaDeCompras.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\CestaDeCompras.Designer.cs">
+      <DependentUpon>CestaDeCompras.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\ClientePF.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\ClientePF.Designer.cs">
       <DependentUpon>ClientePF.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Compras.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Compras.Designer.cs">
+      <DependentUpon>Compras.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Controle de Usuários.cs">
       <SubType>Form</SubType>
@@ -119,6 +131,12 @@
     <Compile Include="View\PesquisarClientePJ.Designer.cs">
       <DependentUpon>PesquisarClientePJ.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\PesquisarFornecedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\PesquisarFornecedor.Designer.cs">
+      <DependentUpon>PesquisarFornecedor.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\PesquisarUsuários.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -142,8 +160,14 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>WinetechDataSet.xsd</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="View\CestaDeCompras.resx">
+      <DependentUpon>CestaDeCompras.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\ClientePF.resx">
       <DependentUpon>ClientePF.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Compras.resx">
+      <DependentUpon>Compras.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Controle de Usuários.resx">
       <DependentUpon>Controle de Usuários.cs</DependentUpon>
@@ -168,6 +192,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\PesquisarClientePJ.resx">
       <DependentUpon>PesquisarClientePJ.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\PesquisarFornecedor.resx">
+      <DependentUpon>PesquisarFornecedor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\PesquisarUsuários.resx">
       <DependentUpon>PesquisarUsuários.cs</DependentUpon>

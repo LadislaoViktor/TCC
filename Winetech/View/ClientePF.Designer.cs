@@ -44,12 +44,12 @@
             this.lblRua = new System.Windows.Forms.Label();
             this.lblNumero = new System.Windows.Forms.Label();
             this.lblComplemento = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbBxEstado = new System.Windows.Forms.ComboBox();
             this.winetechDataSet = new Winetech.WinetechDataSet();
             this.enderecoClienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.enderecoClienteTableAdapter = new Winetech.WinetechDataSetTableAdapters.enderecoClienteTableAdapter();
             this.clienteTableAdapter = new Winetech.WinetechDataSetTableAdapters.clienteTableAdapter();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.cbBxCidade = new System.Windows.Forms.ComboBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -57,15 +57,15 @@
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.textBox11 = new System.Windows.Forms.TextBox();
+            this.txtBxBairro = new System.Windows.Forms.TextBox();
+            this.txtBxCEP = new System.Windows.Forms.TextBox();
+            this.txtBxNumero = new System.Windows.Forms.TextBox();
+            this.txtBxRua = new System.Windows.Forms.TextBox();
+            this.txtBxComplemento = new System.Windows.Forms.TextBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnInserir = new System.Windows.Forms.Button();
+            this.btnPesquisar = new System.Windows.Forms.Button();
             this.fkCodigoEnderecoClienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.chkBxPessoaFisica = new System.Windows.Forms.CheckBox();
             this.chkBxPessoaJuridica = new System.Windows.Forms.CheckBox();
@@ -209,13 +209,13 @@
             this.lblComplemento.TabIndex = 14;
             this.lblComplemento.Text = "Complemento:";
             // 
-            // comboBox1
+            // cbBxEstado
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(80, 254);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 15;
+            this.cbBxEstado.FormattingEnabled = true;
+            this.cbBxEstado.Location = new System.Drawing.Point(80, 254);
+            this.cbBxEstado.Name = "cbBxEstado";
+            this.cbBxEstado.Size = new System.Drawing.Size(121, 21);
+            this.cbBxEstado.TabIndex = 15;
             // 
             // winetechDataSet
             // 
@@ -235,13 +235,13 @@
             // 
             this.clienteTableAdapter.ClearBeforeFill = true;
             // 
-            // comboBox2
+            // cbBxCidade
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(266, 254);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 21);
-            this.comboBox2.TabIndex = 16;
+            this.cbBxCidade.FormattingEnabled = true;
+            this.cbBxCidade.Location = new System.Drawing.Point(266, 254);
+            this.cbBxCidade.Name = "cbBxCidade";
+            this.cbBxCidade.Size = new System.Drawing.Size(121, 21);
+            this.cbBxCidade.TabIndex = 16;
             // 
             // dateTimePicker1
             // 
@@ -293,40 +293,40 @@
             this.textBox6.Size = new System.Drawing.Size(121, 20);
             this.textBox6.TabIndex = 23;
             // 
-            // textBox7
+            // txtBxBairro
             // 
-            this.textBox7.Location = new System.Drawing.Point(80, 286);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(121, 20);
-            this.textBox7.TabIndex = 24;
+            this.txtBxBairro.Location = new System.Drawing.Point(80, 286);
+            this.txtBxBairro.Name = "txtBxBairro";
+            this.txtBxBairro.Size = new System.Drawing.Size(121, 20);
+            this.txtBxBairro.TabIndex = 24;
             // 
-            // textBox8
+            // txtBxCEP
             // 
-            this.textBox8.Location = new System.Drawing.Point(80, 321);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(121, 20);
-            this.textBox8.TabIndex = 25;
+            this.txtBxCEP.Location = new System.Drawing.Point(80, 321);
+            this.txtBxCEP.Name = "txtBxCEP";
+            this.txtBxCEP.Size = new System.Drawing.Size(121, 20);
+            this.txtBxCEP.TabIndex = 25;
             // 
-            // textBox9
+            // txtBxNumero
             // 
-            this.textBox9.Location = new System.Drawing.Point(80, 358);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(121, 20);
-            this.textBox9.TabIndex = 26;
+            this.txtBxNumero.Location = new System.Drawing.Point(80, 358);
+            this.txtBxNumero.Name = "txtBxNumero";
+            this.txtBxNumero.Size = new System.Drawing.Size(121, 20);
+            this.txtBxNumero.TabIndex = 26;
             // 
-            // textBox10
+            // txtBxRua
             // 
-            this.textBox10.Location = new System.Drawing.Point(266, 321);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(121, 20);
-            this.textBox10.TabIndex = 27;
+            this.txtBxRua.Location = new System.Drawing.Point(266, 321);
+            this.txtBxRua.Name = "txtBxRua";
+            this.txtBxRua.Size = new System.Drawing.Size(121, 20);
+            this.txtBxRua.TabIndex = 27;
             // 
-            // textBox11
+            // txtBxComplemento
             // 
-            this.textBox11.Location = new System.Drawing.Point(111, 390);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(90, 20);
-            this.textBox11.TabIndex = 28;
+            this.txtBxComplemento.Location = new System.Drawing.Point(111, 390);
+            this.txtBxComplemento.Name = "txtBxComplemento";
+            this.txtBxComplemento.Size = new System.Drawing.Size(90, 20);
+            this.txtBxComplemento.TabIndex = 28;
             // 
             // checkBox1
             // 
@@ -348,23 +348,23 @@
             this.checkBox2.Text = "checkBox2";
             this.checkBox2.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // btnInserir
             // 
-            this.button1.Location = new System.Drawing.Point(220, 390);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 31;
-            this.button1.Text = "Inserir";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnInserir.Location = new System.Drawing.Point(220, 390);
+            this.btnInserir.Name = "btnInserir";
+            this.btnInserir.Size = new System.Drawing.Size(75, 23);
+            this.btnInserir.TabIndex = 31;
+            this.btnInserir.Text = "Inserir";
+            this.btnInserir.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // btnPesquisar
             // 
-            this.button2.Location = new System.Drawing.Point(312, 390);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 32;
-            this.button2.Text = "Pesquisar";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnPesquisar.Location = new System.Drawing.Point(312, 390);
+            this.btnPesquisar.Name = "btnPesquisar";
+            this.btnPesquisar.Size = new System.Drawing.Size(75, 23);
+            this.btnPesquisar.TabIndex = 32;
+            this.btnPesquisar.Text = "Pesquisar";
+            this.btnPesquisar.UseVisualStyleBackColor = true;
             // 
             // fkCodigoEnderecoClienteBindingSource
             // 
@@ -399,15 +399,15 @@
             this.ClientSize = new System.Drawing.Size(415, 422);
             this.Controls.Add(this.chkBxPessoaJuridica);
             this.Controls.Add(this.chkBxPessoaFisica);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnPesquisar);
+            this.Controls.Add(this.btnInserir);
             this.Controls.Add(this.checkBox2);
             this.Controls.Add(this.checkBox1);
-            this.Controls.Add(this.textBox11);
-            this.Controls.Add(this.textBox10);
-            this.Controls.Add(this.textBox9);
-            this.Controls.Add(this.textBox8);
-            this.Controls.Add(this.textBox7);
+            this.Controls.Add(this.txtBxComplemento);
+            this.Controls.Add(this.txtBxRua);
+            this.Controls.Add(this.txtBxNumero);
+            this.Controls.Add(this.txtBxCEP);
+            this.Controls.Add(this.txtBxBairro);
             this.Controls.Add(this.textBox6);
             this.Controls.Add(this.textBox5);
             this.Controls.Add(this.textBox4);
@@ -415,8 +415,8 @@
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cbBxCidade);
+            this.Controls.Add(this.cbBxEstado);
             this.Controls.Add(this.lblComplemento);
             this.Controls.Add(this.lblNumero);
             this.Controls.Add(this.lblRua);
@@ -460,13 +460,13 @@
         private System.Windows.Forms.Label lblRua;
         private System.Windows.Forms.Label lblNumero;
         private System.Windows.Forms.Label lblComplemento;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbBxEstado;
         private WinetechDataSet winetechDataSet;
         private System.Windows.Forms.BindingSource enderecoClienteBindingSource;
         private WinetechDataSetTableAdapters.enderecoClienteTableAdapter enderecoClienteTableAdapter;
         private System.Windows.Forms.BindingSource fkCodigoEnderecoClienteBindingSource;
         private WinetechDataSetTableAdapters.clienteTableAdapter clienteTableAdapter;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cbBxCidade;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
@@ -474,15 +474,15 @@
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.TextBox textBox11;
+        private System.Windows.Forms.TextBox txtBxBairro;
+        private System.Windows.Forms.TextBox txtBxCEP;
+        private System.Windows.Forms.TextBox txtBxNumero;
+        private System.Windows.Forms.TextBox txtBxRua;
+        private System.Windows.Forms.TextBox txtBxComplemento;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnInserir;
+        private System.Windows.Forms.Button btnPesquisar;
         private System.Windows.Forms.CheckBox chkBxPessoaFisica;
         private System.Windows.Forms.CheckBox chkBxPessoaJuridica;
     }

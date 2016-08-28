@@ -36,5 +36,20 @@ namespace Winetech.View
         {
 
         }
+
+        private void TelaClientePJ_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'winetechDataSet.fornecedor' table. You can move, or remove it, as needed.
+           // this.fornecedorTableAdapter.Fill(this.winetechDataSet.fornecedor);
+            // TODO: This line of code loads data into the 'winetechDataSet.enderecoFornecedor' table. You can move, or remove it, as needed.
+            //this.enderecoFornecedorTableAdapter.Fill(this.winetechDataSet.enderecoFornecedor);
+
+        }
+
+        private void btnPesquisar_Click(object sender, EventArgs e)
+        {
+            PesquisarClientePJ PJ = new PesquisarClientePJ();
+            PJ.Show();
+        }
     }
 }

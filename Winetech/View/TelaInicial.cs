@@ -27,5 +27,10 @@ namespace Winetech.View
             ClientePF C = new ClientePF();
             C.Show();
         }
+
+        private void btnCompras_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
