@@ -20,11 +20,11 @@ namespace Winetech.View
         private void Compras_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'winetechDataSet.pedidoFornecedor' table. You can move, or remove it, as needed.
-            this.pedidoFornecedorTableAdapter.Fill(this.winetechDataSet.pedidoFornecedor);
+            //this.pedidoFornecedorTableAdapter.Fill(this.winetechDataSet.pedidoFornecedor);
             // TODO: This line of code loads data into the 'winetechDataSet.itensPedidoFornecedor' table. You can move, or remove it, as needed.
-            this.itensPedidoFornecedorTableAdapter.Fill(this.winetechDataSet.itensPedidoFornecedor);
+            //this.itensPedidoFornecedorTableAdapter.Fill(this.winetechDataSet.itensPedidoFornecedor);
             // TODO: This line of code loads data into the 'winetechDataSet.pedidoCliente' table. You can move, or remove it, as needed.
-            this.pedidoClienteTableAdapter.Fill(this.winetechDataSet.pedidoCliente);
+           //this.pedidoClienteTableAdapter.Fill(this.winetechDataSet.pedidoCliente);
 
         }
 

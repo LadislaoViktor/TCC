@@ -71,6 +71,7 @@
   <ItemGroup>
     <Compile Include="Ajuda\Criptografia.cs" />
     <Compile Include="Controler\ControleUsuarios.cs" />
+    <Compile Include="Controler\Controle_Cliente.cs" />
     <Compile Include="Controler\Controle_Login.cs" />
     <Compile Include="View\CestaDeCompras.cs">
       <SubType>Form</SubType>
@@ -96,11 +97,17 @@
     <Compile Include="View\Controle de Usuários.Designer.cs">
       <DependentUpon>Controle de Usuários.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Form1.cs">
+    <Compile Include="View\Estoque.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="View\Estoque.Designer.cs">
+      <DependentUpon>Estoque.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\Produto.cs" />
     <Compile Include="Model\Cliente.cs" />
@@ -155,6 +162,12 @@
     <Compile Include="View\TelaInicial.Designer.cs">
       <DependentUpon>TelaInicial.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Vendas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Vendas.Designer.cs">
+      <DependentUpon>Vendas.cs</DependentUpon>
+    </Compile>
     <Compile Include="WinetechDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -172,8 +185,11 @@
     <EmbeddedResource Include="View\Controle de Usuários.resx">
       <DependentUpon>Controle de Usuários.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="View\Estoque.resx">
+      <DependentUpon>Estoque.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -183,6 +199,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="View\Fornecedor.resx">
       <DependentUpon>Fornecedor.cs</DependentUpon>
@@ -204,6 +221,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\TelaInicial.resx">
       <DependentUpon>TelaInicial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Vendas.resx">
+      <DependentUpon>Vendas.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -232,6 +252,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Icon\" />
+    <Folder Include="Imagens\" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
@@ -246,6 +267,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\vinho.jpg" />
     <Content Include="Winetech.ldf">
       <DependentUpon>Winetech.mdf</DependentUpon>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

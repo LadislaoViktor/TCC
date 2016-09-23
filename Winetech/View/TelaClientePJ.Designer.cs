@@ -59,15 +59,15 @@
             this.btnInserir = new System.Windows.Forms.Button();
             this.btnPesquisar = new System.Windows.Forms.Button();
             this.cbBxEstado = new System.Windows.Forms.ComboBox();
-            this.winetechDataSet = new Winetech.WinetechDataSet();
-            this.enderecoFornecedorBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.enderecoFornecedorTableAdapter = new Winetech.WinetechDataSetTableAdapters.enderecoFornecedorTableAdapter();
             this.fKCodigoEnderecoFornecedorBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.enderecoFornecedorBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.winetechDataSet = new Winetech.WinetechDataSet();
+            this.enderecoFornecedorTableAdapter = new Winetech.WinetechDataSetTableAdapters.enderecoFornecedorTableAdapter();
             this.fornecedorTableAdapter = new Winetech.WinetechDataSetTableAdapters.fornecedorTableAdapter();
             this.cbBxCidade = new System.Windows.Forms.ComboBox();
-            ((System.ComponentModel.ISupportInitialize)(this.winetechDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.enderecoFornecedorBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fKCodigoEnderecoFornecedorBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.enderecoFornecedorBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.winetechDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // lblRazaoSocial
@@ -305,6 +305,7 @@
             this.btnInserir.TabIndex = 29;
             this.btnInserir.Text = "Inserir";
             this.btnInserir.UseVisualStyleBackColor = true;
+            this.btnInserir.Click += new System.EventHandler(this.btnInserir_Click);
             // 
             // btnPesquisar
             // 
@@ -324,26 +325,25 @@
             this.cbBxEstado.Name = "cbBxEstado";
             this.cbBxEstado.Size = new System.Drawing.Size(86, 21);
             this.cbBxEstado.TabIndex = 31;
-            this.cbBxEstado.Text = "Estado";
             // 
-            // winetechDataSet
+            // fKCodigoEnderecoFornecedorBindingSource
             // 
-            this.winetechDataSet.DataSetName = "WinetechDataSet";
-            this.winetechDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.fKCodigoEnderecoFornecedorBindingSource.DataMember = "FKCodigoEnderecoFornecedor";
+            this.fKCodigoEnderecoFornecedorBindingSource.DataSource = this.enderecoFornecedorBindingSource;
             // 
             // enderecoFornecedorBindingSource
             // 
             this.enderecoFornecedorBindingSource.DataMember = "enderecoFornecedor";
             this.enderecoFornecedorBindingSource.DataSource = this.winetechDataSet;
             // 
+            // winetechDataSet
+            // 
+            this.winetechDataSet.DataSetName = "WinetechDataSet";
+            this.winetechDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // enderecoFornecedorTableAdapter
             // 
             this.enderecoFornecedorTableAdapter.ClearBeforeFill = true;
-            // 
-            // fKCodigoEnderecoFornecedorBindingSource
-            // 
-            this.fKCodigoEnderecoFornecedorBindingSource.DataMember = "FKCodigoEnderecoFornecedor";
-            this.fKCodigoEnderecoFornecedorBindingSource.DataSource = this.enderecoFornecedorBindingSource;
             // 
             // fornecedorTableAdapter
             // 
@@ -357,7 +357,6 @@
             this.cbBxCidade.Name = "cbBxCidade";
             this.cbBxCidade.Size = new System.Drawing.Size(86, 21);
             this.cbBxCidade.TabIndex = 32;
-            this.cbBxCidade.Text = "Cidade";
             // 
             // TelaClientePJ
             // 
@@ -397,10 +396,11 @@
             this.Controls.Add(this.lblRazaoSocial);
             this.Name = "TelaClientePJ";
             this.Text = "Cliente Pessoa Juridica";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.TelaClientePJ_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.winetechDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.enderecoFornecedorBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fKCodigoEnderecoFornecedorBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.enderecoFornecedorBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.winetechDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

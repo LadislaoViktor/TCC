@@ -8,6 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Winetech.Controler;
+using Winetech.Model;
 
 namespace Winetech.View
 {
@@ -25,8 +27,10 @@ namespace Winetech.View
 
         private void Controle_de_Usuários_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'winetechDataSet.funcoes' table. You can move, or remove it, as needed.
+            this.funcoesTableAdapter.Fill(this.winetechDataSet.funcoes);
             // TODO: This line of code loads data into the 'winetechDataSet.usuario' table. You can move, or remove it, as needed.
-           // this.usuarioTableAdapter.Fill(this.winetechDataSet.usuario);
+            // this.usuarioTableAdapter.Fill(this.winetechDataSet.usuario);
 
         }
 
@@ -37,7 +41,7 @@ namespace Winetech.View
 
         private void btnInserir_Click(object sender, EventArgs e)
         {
-            
+            Usuario U = new Usuario(txtBxLogin,txtBxSenha,txtBxCPF,txtBxNomeCompleto,Status,cbBxFuncao );
         }
 
         private void btnPesquisar_Click(object sender, EventArgs e)
@@ -69,6 +73,25 @@ namespace Winetech.View
                 conexao.Close();
             }
 */
+        }
+        private void frmUsuarios_FormClosing(Object sender, FormClosingEventArgs e)
+        {
+            System.Text.StringBuilder messageBoxCS = new System.Text.StringBuilder();
+            messageBoxCS.AppendFormat("{0} = {1}", "CloseReason", e.CloseReason);
+            messageBoxCS.AppendLine();
+            messageBoxCS.AppendFormat("{0} = {1}", "Cancel", e.Cancel);
+            messageBoxCS.AppendLine();
+            MessageBox.Show(messageBoxCS.ToString(), "FormClosing Event");
+        }
+        char Status;
+        private void rdBtnAtivo_CheckedChanged(object sender, EventArgs e)
+        {
+            Status = 'A';
+        }
+
+        private void rdBtnInativo_CheckedChanged(object sender, EventArgs e)
+        {
+            Status = 'I';
         }
     }
 }

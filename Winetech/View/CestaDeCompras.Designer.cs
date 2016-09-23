@@ -32,9 +32,6 @@
             this.lblProduto = new System.Windows.Forms.Label();
             this.txtBxProduto = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.winetechDataSet = new Winetech.WinetechDataSet();
-            this.produtoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.produtoTableAdapter = new Winetech.WinetechDataSetTableAdapters.produtoTableAdapter();
             this.codigoProdutoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descricaoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -49,10 +46,13 @@
             this.dataValidadeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.codigoPaisDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.codigoSafraDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.produtoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.winetechDataSet = new Winetech.WinetechDataSet();
+            this.produtoTableAdapter = new Winetech.WinetechDataSetTableAdapters.produtoTableAdapter();
             this.btnAdicionarItens = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.winetechDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.produtoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.winetechDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // lblProduto
@@ -96,20 +96,6 @@
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(579, 218);
             this.dataGridView1.TabIndex = 2;
-            // 
-            // winetechDataSet
-            // 
-            this.winetechDataSet.DataSetName = "WinetechDataSet";
-            this.winetechDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // produtoBindingSource
-            // 
-            this.produtoBindingSource.DataMember = "produto";
-            this.produtoBindingSource.DataSource = this.winetechDataSet;
-            // 
-            // produtoTableAdapter
-            // 
-            this.produtoTableAdapter.ClearBeforeFill = true;
             // 
             // codigoProdutoDataGridViewTextBoxColumn
             // 
@@ -195,6 +181,20 @@
             this.codigoSafraDataGridViewTextBoxColumn.HeaderText = "codigoSafra";
             this.codigoSafraDataGridViewTextBoxColumn.Name = "codigoSafraDataGridViewTextBoxColumn";
             // 
+            // produtoBindingSource
+            // 
+            this.produtoBindingSource.DataMember = "produto";
+            this.produtoBindingSource.DataSource = this.winetechDataSet;
+            // 
+            // winetechDataSet
+            // 
+            this.winetechDataSet.DataSetName = "WinetechDataSet";
+            this.winetechDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // produtoTableAdapter
+            // 
+            this.produtoTableAdapter.ClearBeforeFill = true;
+            // 
             // btnAdicionarItens
             // 
             this.btnAdicionarItens.Location = new System.Drawing.Point(82, 315);
@@ -215,10 +215,11 @@
             this.Controls.Add(this.lblProduto);
             this.Name = "CestaDeCompras";
             this.Text = "Cesta De Compras";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.CestaDeCompras_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.winetechDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.produtoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.winetechDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

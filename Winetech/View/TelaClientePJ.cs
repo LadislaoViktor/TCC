@@ -51,5 +51,10 @@ namespace Winetech.View
             PesquisarClientePJ PJ = new PesquisarClientePJ();
             PJ.Show();
         }
+
+        private void btnInserir_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

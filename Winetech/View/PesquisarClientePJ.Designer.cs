@@ -32,9 +32,6 @@
             this.lblNomeFantasia = new System.Windows.Forms.Label();
             this.txtBxNomeFantasia = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.winetechDataSet = new Winetech.WinetechDataSet();
-            this.clienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.clienteTableAdapter = new Winetech.WinetechDataSetTableAdapters.clienteTableAdapter();
             this.codigoClienteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.razaosocialDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nomefantasiaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -42,12 +39,15 @@
             this.emailclienteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.statusclienteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.limitecreditoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.winetechDataSet = new Winetech.WinetechDataSet();
+            this.clienteTableAdapter = new Winetech.WinetechDataSetTableAdapters.clienteTableAdapter();
             this.btnPesquisar = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.btnExcluir = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.winetechDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.winetechDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // lblNomeFantasia
@@ -83,20 +83,6 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(621, 178);
             this.dataGridView1.TabIndex = 2;
-            // 
-            // winetechDataSet
-            // 
-            this.winetechDataSet.DataSetName = "WinetechDataSet";
-            this.winetechDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // clienteBindingSource
-            // 
-            this.clienteBindingSource.DataMember = "cliente";
-            this.clienteBindingSource.DataSource = this.winetechDataSet;
-            // 
-            // clienteTableAdapter
-            // 
-            this.clienteTableAdapter.ClearBeforeFill = true;
             // 
             // codigoClienteDataGridViewTextBoxColumn
             // 
@@ -140,6 +126,20 @@
             this.limitecreditoDataGridViewTextBoxColumn.HeaderText = "limitecredito";
             this.limitecreditoDataGridViewTextBoxColumn.Name = "limitecreditoDataGridViewTextBoxColumn";
             // 
+            // clienteBindingSource
+            // 
+            this.clienteBindingSource.DataMember = "cliente";
+            this.clienteBindingSource.DataSource = this.winetechDataSet;
+            // 
+            // winetechDataSet
+            // 
+            this.winetechDataSet.DataSetName = "WinetechDataSet";
+            this.winetechDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // clienteTableAdapter
+            // 
+            this.clienteTableAdapter.ClearBeforeFill = true;
+            // 
             // btnPesquisar
             // 
             this.btnPesquisar.Location = new System.Drawing.Point(240, 9);
@@ -180,10 +180,11 @@
             this.Controls.Add(this.lblNomeFantasia);
             this.Name = "PesquisarClientePJ";
             this.Text = "PesquisarClientePJ";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.PesquisarClientePJ_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.winetechDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.winetechDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

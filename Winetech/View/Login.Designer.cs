@@ -34,6 +34,7 @@
             this.lblLogin = new System.Windows.Forms.Label();
             this.lblSenha = new System.Windows.Forms.Label();
             this.btnLogin = new System.Windows.Forms.Button();
+            this.btnEsqueciSenha = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtBxLogin
@@ -48,6 +49,7 @@
             // txtBxSenha
             // 
             this.txtBxSenha.AcceptsReturn = true;
+            this.txtBxSenha.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.txtBxSenha.Location = new System.Drawing.Point(135, 92);
             this.txtBxSenha.Name = "txtBxSenha";
             this.txtBxSenha.PasswordChar = '*';
@@ -88,8 +90,19 @@
             this.btnLogin.UseVisualStyleBackColor = true;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
+            // btnEsqueciSenha
+            // 
+            this.btnEsqueciSenha.Location = new System.Drawing.Point(145, 154);
+            this.btnEsqueciSenha.Name = "btnEsqueciSenha";
+            this.btnEsqueciSenha.Size = new System.Drawing.Size(90, 23);
+            this.btnEsqueciSenha.TabIndex = 5;
+            this.btnEsqueciSenha.Text = "Esqueci Senha";
+            this.btnEsqueciSenha.UseVisualStyleBackColor = true;
+            this.btnEsqueciSenha.Click += new System.EventHandler(this.btnEsqueciSenha_Click);
+            // 
             // frmLogin
             // 
+            this.AcceptButton = this.btnLogin;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
@@ -98,18 +111,19 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(284, 209);
+            this.Controls.Add(this.btnEsqueciSenha);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.lblSenha);
             this.Controls.Add(this.lblLogin);
             this.Controls.Add(this.txtBxSenha);
             this.Controls.Add(this.txtBxLogin);
+            this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.HelpButton = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "frmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Winetech";
-            this.TransparencyKey = System.Drawing.Color.Transparent;
             this.Load += new System.EventHandler(this.frmLogin_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -123,6 +137,7 @@
         private System.Windows.Forms.Label lblLogin;
         private System.Windows.Forms.Label lblSenha;
         private System.Windows.Forms.Button btnLogin;
+        private System.Windows.Forms.Button btnEsqueciSenha;
     }
 }
 

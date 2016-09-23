@@ -294,6 +294,7 @@
             this.Controls.Add(this.lblCodigo);
             this.Name = "Fornecedor";
             this.Text = "Fornecedor";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -32,9 +32,6 @@
             this.lblNome = new System.Windows.Forms.Label();
             this.txtBxPesquisarUsuarios = new System.Windows.Forms.TextBox();
             this.dtGdVDadosUsuários = new System.Windows.Forms.DataGridView();
-            this.winetechDataSet = new Winetech.WinetechDataSet();
-            this.usuarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.usuarioTableAdapter = new Winetech.WinetechDataSetTableAdapters.usuarioTableAdapter();
             this.codigoUsuarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lloginDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.senhaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -42,10 +39,13 @@
             this.nomecompletoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.statusUsuarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.codigoPerfilDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.usuarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.winetechDataSet = new Winetech.WinetechDataSet();
+            this.usuarioTableAdapter = new Winetech.WinetechDataSetTableAdapters.usuarioTableAdapter();
             this.btnPesquisarUsuarios = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtGdVDadosUsuários)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.winetechDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.winetechDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // lblNome
@@ -82,20 +82,6 @@
             this.dtGdVDadosUsuários.Size = new System.Drawing.Size(538, 239);
             this.dtGdVDadosUsuários.TabIndex = 2;
             this.dtGdVDadosUsuários.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtGdVDadosUsuários_CellContentClick);
-            // 
-            // winetechDataSet
-            // 
-            this.winetechDataSet.DataSetName = "WinetechDataSet";
-            this.winetechDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // usuarioBindingSource
-            // 
-            this.usuarioBindingSource.DataMember = "usuario";
-            this.usuarioBindingSource.DataSource = this.winetechDataSet;
-            // 
-            // usuarioTableAdapter
-            // 
-            this.usuarioTableAdapter.ClearBeforeFill = true;
             // 
             // codigoUsuarioDataGridViewTextBoxColumn
             // 
@@ -139,6 +125,20 @@
             this.codigoPerfilDataGridViewTextBoxColumn.HeaderText = "codigoPerfil";
             this.codigoPerfilDataGridViewTextBoxColumn.Name = "codigoPerfilDataGridViewTextBoxColumn";
             // 
+            // usuarioBindingSource
+            // 
+            this.usuarioBindingSource.DataMember = "usuario";
+            this.usuarioBindingSource.DataSource = this.winetechDataSet;
+            // 
+            // winetechDataSet
+            // 
+            this.winetechDataSet.DataSetName = "WinetechDataSet";
+            this.winetechDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // usuarioTableAdapter
+            // 
+            this.usuarioTableAdapter.ClearBeforeFill = true;
+            // 
             // btnPesquisarUsuarios
             // 
             this.btnPesquisarUsuarios.Location = new System.Drawing.Point(253, 13);
@@ -160,10 +160,11 @@
             this.Controls.Add(this.lblNome);
             this.Name = "frmPesquisarUsuários";
             this.Text = "Pesquisar Usuários";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmPesquisarUsuários_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtGdVDadosUsuários)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.winetechDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.winetechDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

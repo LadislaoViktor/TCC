@@ -26,8 +26,7 @@ namespace Winetech
                 MessageBox.Show("Login efetuado com sucesso!", "Informação!", MessageBoxButtons.OK);
                 TelaInicial T = new TelaInicial();
                 T.Show();
-
-
+                this.Hide();
             }
             else
                 MessageBox.Show("Verifique login e senha!", "Acesso negado!", MessageBoxButtons.OK);
@@ -36,6 +35,11 @@ namespace Winetech
         private void frmLogin_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnEsqueciSenha_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Se fodeu!");
         }
     }
 }

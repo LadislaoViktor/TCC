@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Winetech.Controler;
 
 namespace Winetech.View
 {
@@ -35,6 +36,18 @@ namespace Winetech.View
         {
             TelaClientePJ PJ = new TelaClientePJ();
             PJ.Show();
+        }
+
+        private void btnPesquisar_Click(object sender, EventArgs e)
+        {
+            PesquisarCliente PF = new PesquisarCliente();
+            PF.Show();
+        }
+
+        private void btnInserir_Click(object sender, EventArgs e)
+        {
+            Controle_Cliente C=new Controle_Cliente();
+            
         }
     }
 }

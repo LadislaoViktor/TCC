@@ -41,13 +41,13 @@
             this.txtBxFornecedor = new System.Windows.Forms.TextBox();
             this.dtTmPcData = new System.Windows.Forms.DateTimePicker();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.lblCodigo = new System.Windows.Forms.Label();
             this.codigoPedidoFornecedorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataCompraPedidoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Produto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.quantidadePedidoFornecedorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.precoUnitarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.totalPedidoFornecedorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblCodigo = new System.Windows.Forms.Label();
             this.btnAdicionarItens = new System.Windows.Forms.Button();
             this.btnRemoverItens = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -141,15 +141,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(643, 190);
             this.dataGridView1.TabIndex = 9;
             // 
-            // lblCodigo
-            // 
-            this.lblCodigo.AutoSize = true;
-            this.lblCodigo.Location = new System.Drawing.Point(16, 63);
-            this.lblCodigo.Name = "lblCodigo";
-            this.lblCodigo.Size = new System.Drawing.Size(43, 13);
-            this.lblCodigo.TabIndex = 10;
-            this.lblCodigo.Text = "Codigo:";
-            // 
             // codigoPedidoFornecedorDataGridViewTextBoxColumn
             // 
             this.codigoPedidoFornecedorDataGridViewTextBoxColumn.DataPropertyName = "codigoPedidoFornecedor";
@@ -184,6 +175,15 @@
             this.totalPedidoFornecedorDataGridViewTextBoxColumn.DataPropertyName = "totalPedidoFornecedor";
             this.totalPedidoFornecedorDataGridViewTextBoxColumn.HeaderText = "Total Pedido";
             this.totalPedidoFornecedorDataGridViewTextBoxColumn.Name = "totalPedidoFornecedorDataGridViewTextBoxColumn";
+            // 
+            // lblCodigo
+            // 
+            this.lblCodigo.AutoSize = true;
+            this.lblCodigo.Location = new System.Drawing.Point(16, 63);
+            this.lblCodigo.Name = "lblCodigo";
+            this.lblCodigo.Size = new System.Drawing.Size(43, 13);
+            this.lblCodigo.TabIndex = 10;
+            this.lblCodigo.Text = "Codigo:";
             // 
             // btnAdicionarItens
             // 
@@ -236,6 +236,7 @@
             this.Controls.Add(this.lblFornecedor);
             this.Name = "Compras";
             this.Text = "Compras";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Compras_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pedidoFornecedorBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.winetechDataSet)).EndInit();

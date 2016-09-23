@@ -32,12 +32,6 @@
             this.txtBxFornecedor = new System.Windows.Forms.TextBox();
             this.lblNomeFantasia = new System.Windows.Forms.Label();
             this.dtGDVFornecedor = new System.Windows.Forms.DataGridView();
-            this.winetechDataSet = new Winetech.WinetechDataSet();
-            this.fornecedorBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.fornecedorTableAdapter = new Winetech.WinetechDataSetTableAdapters.fornecedorTableAdapter();
-            this.btnEditar = new System.Windows.Forms.Button();
-            this.btnExcluir = new System.Windows.Forms.Button();
-            this.codigoFornecedorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cnpjFornecedorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.razaoSocialFornecedorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nomeFantasiaFornecedorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -45,9 +39,14 @@
             this.telefoneFornecedorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.statusFornecedorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.codigoEnderecoFornecedorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fornecedorBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.winetechDataSet = new Winetech.WinetechDataSet();
+            this.fornecedorTableAdapter = new Winetech.WinetechDataSetTableAdapters.fornecedorTableAdapter();
+            this.btnEditar = new System.Windows.Forms.Button();
+            this.btnExcluir = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtGDVFornecedor)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.winetechDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fornecedorBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.winetechDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // txtBxFornecedor
@@ -72,7 +71,6 @@
             this.dtGDVFornecedor.AutoGenerateColumns = false;
             this.dtGDVFornecedor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtGDVFornecedor.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.codigoFornecedorDataGridViewTextBoxColumn,
             this.cnpjFornecedorDataGridViewTextBoxColumn,
             this.razaoSocialFornecedorDataGridViewTextBoxColumn,
             this.nomeFantasiaFornecedorDataGridViewTextBoxColumn,
@@ -85,44 +83,6 @@
             this.dtGDVFornecedor.Name = "dtGDVFornecedor";
             this.dtGDVFornecedor.Size = new System.Drawing.Size(598, 215);
             this.dtGDVFornecedor.TabIndex = 2;
-            // 
-            // winetechDataSet
-            // 
-            this.winetechDataSet.DataSetName = "WinetechDataSet";
-            this.winetechDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // fornecedorBindingSource
-            // 
-            this.fornecedorBindingSource.DataMember = "fornecedor";
-            this.fornecedorBindingSource.DataSource = this.winetechDataSet;
-            // 
-            // fornecedorTableAdapter
-            // 
-            this.fornecedorTableAdapter.ClearBeforeFill = true;
-            // 
-            // btnEditar
-            // 
-            this.btnEditar.Location = new System.Drawing.Point(55, 296);
-            this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(75, 23);
-            this.btnEditar.TabIndex = 3;
-            this.btnEditar.Text = "Editar";
-            this.btnEditar.UseVisualStyleBackColor = true;
-            // 
-            // btnExcluir
-            // 
-            this.btnExcluir.Location = new System.Drawing.Point(226, 297);
-            this.btnExcluir.Name = "btnExcluir";
-            this.btnExcluir.Size = new System.Drawing.Size(75, 23);
-            this.btnExcluir.TabIndex = 4;
-            this.btnExcluir.Text = "Excluir";
-            this.btnExcluir.UseVisualStyleBackColor = true;
-            // 
-            // codigoFornecedorDataGridViewTextBoxColumn
-            // 
-            this.codigoFornecedorDataGridViewTextBoxColumn.DataPropertyName = "Codigo Fornecedor";
-            this.codigoFornecedorDataGridViewTextBoxColumn.HeaderText = "codigoFornecedor";
-            this.codigoFornecedorDataGridViewTextBoxColumn.Name = "codigoFornecedorDataGridViewTextBoxColumn";
             // 
             // cnpjFornecedorDataGridViewTextBoxColumn
             // 
@@ -166,6 +126,38 @@
             this.codigoEnderecoFornecedorDataGridViewTextBoxColumn.HeaderText = "codigoEnderecoFornecedor";
             this.codigoEnderecoFornecedorDataGridViewTextBoxColumn.Name = "codigoEnderecoFornecedorDataGridViewTextBoxColumn";
             // 
+            // fornecedorBindingSource
+            // 
+            this.fornecedorBindingSource.DataMember = "fornecedor";
+            this.fornecedorBindingSource.DataSource = this.winetechDataSet;
+            // 
+            // winetechDataSet
+            // 
+            this.winetechDataSet.DataSetName = "WinetechDataSet";
+            this.winetechDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // fornecedorTableAdapter
+            // 
+            this.fornecedorTableAdapter.ClearBeforeFill = true;
+            // 
+            // btnEditar
+            // 
+            this.btnEditar.Location = new System.Drawing.Point(55, 296);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(75, 23);
+            this.btnEditar.TabIndex = 3;
+            this.btnEditar.Text = "Editar";
+            this.btnEditar.UseVisualStyleBackColor = true;
+            // 
+            // btnExcluir
+            // 
+            this.btnExcluir.Location = new System.Drawing.Point(226, 297);
+            this.btnExcluir.Name = "btnExcluir";
+            this.btnExcluir.Size = new System.Drawing.Size(75, 23);
+            this.btnExcluir.TabIndex = 4;
+            this.btnExcluir.Text = "Excluir";
+            this.btnExcluir.UseVisualStyleBackColor = true;
+            // 
             // PesquisarFornecedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -178,10 +170,11 @@
             this.Controls.Add(this.txtBxFornecedor);
             this.Name = "PesquisarFornecedor";
             this.Text = "Pesquisar Fornecedor";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.PesquisarFornecedor_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtGDVFornecedor)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.winetechDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fornecedorBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.winetechDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

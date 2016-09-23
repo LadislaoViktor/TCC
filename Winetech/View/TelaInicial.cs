@@ -30,6 +30,31 @@ namespace Winetech.View
 
         private void btnCompras_Click(object sender, EventArgs e)
         {
+            Compras C = new Compras();
+            C.Show();
+        }
+
+        private void btnFornecedores_Click(object sender, EventArgs e)
+        {
+            Fornecedor F = new Fornecedor();
+            F.Show();
+        }
+
+        private void btnVendas_Click(object sender, EventArgs e)
+        {
+            Vendas V = new Vendas();
+            V.Show();
+           
+        }
+
+        private void btnEstoque_Click(object sender, EventArgs e)
+        {
+            Estoque E = new Estoque();
+            E.ShowDialog();
+        }
+
+        private void TelaInicial_Load(object sender, EventArgs e)
+        {
 
         }
     }

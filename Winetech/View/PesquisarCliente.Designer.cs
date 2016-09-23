@@ -235,7 +235,8 @@
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.lblNome);
             this.Name = "PesquisarCliente";
-            this.Text = "PesquisarCliente";
+            this.Text = "Pesquisar Cliente";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.PesquisarCliente_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).EndInit();
