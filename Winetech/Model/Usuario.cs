@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace Winetech.Model
 {
@@ -34,13 +30,42 @@ namespace Winetech.Model
             this.cbBxFuncao = cbBxFuncao;
         }
 
-        private bool validarLogin(string login, string senha)
+        public Usuario(string login, string senha)
         {
+            this.login = login;
+            this.senha = senha;
+        }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="login"></param>
+        /// <param name="senha"></param>
+        /// <returns></returns>
+        public bool validarLogin(Usuario u)
+        {
+            
+            SqlConnection Conexao = new SqlConnection(@"Data Source=.\SQLEXPRESS;AttachDbFilename=C:\Winetech\Winetech\Winetech.MDF;Integrated Security=True;Connect Timeout=30;User Instance=True");
+                Conexao.Open();
+                SqlCommand Comando = new SqlCommand("Insert into ",Conexao);
+            SqlDataReader LeitorDados = Comando.ExecuteReader();
+            while(LeitorDados.Read()){
+                MessageBox.Show("Alguma coisa.");
+            }
+                Conexao.Close();
+           /* if (Comando.)
+            {
+                return true;
+            }
+            else*/
             return true;
         }
-        private bool cadastrarUsuario() {
-
+        public bool cadastrarUsuario(Usuario usuario) {
+            SqlConnection Conexao = new SqlConnection(@"Data Source=.\SQLEXPRESS;AttachDbFilename=C:\Winetech\Winetech\Winetech.MDF;Integrated Security=True;Connect Timeout=30;User Instance=True");
+            Conexao.Open();
+            SqlCommand Comando = new SqlCommand("insert into usuario values(3,'admin','admin','12345678909','Victor Schena','A',2)", Conexao);
+            Conexao.Close();
+            MessageBox.Show("Alguma coisa.");
             return true;
         }
     }

@@ -48,8 +48,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>
-    </StartupObject>
+    <StartupObject>Winetech.Program</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="CryptSharp, Version=2.1.0.0, Culture=neutral, processorArchitecture=MSIL">
@@ -73,6 +72,9 @@
     <Compile Include="Controler\ControleUsuarios.cs" />
     <Compile Include="Controler\Controle_Cliente.cs" />
     <Compile Include="Controler\Controle_Login.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
     <Compile Include="View\CestaDeCompras.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -225,6 +227,9 @@
     <EmbeddedResource Include="View\Vendas.resx">
       <DependentUpon>Vendas.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="bin\Debug\Winetech.exe.config" />
+    <None Include="bin\Debug\Winetech.vshost.exe.config" />
+    <None Include="bin\Debug\Winetech.vshost.exe.manifest" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -248,9 +253,13 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="bin\Debug\bin\Debug\" />
+    <Folder Include="bin\Release\" />
     <Folder Include="Icon\" />
     <Folder Include="Imagens\" />
   </ItemGroup>
@@ -267,15 +276,18 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\vinho.jpg" />
     <Content Include="Winetech.ldf">
       <DependentUpon>Winetech.mdf</DependentUpon>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Winetech_log.ldf">
-      <DependentUpon>Winetech.mdf</DependentUpon>
+    <None Include="Resources\vinho.jpg" />
+    <Content Include="bin\Debug\CryptSharp.dll" />
+    <Content Include="bin\Debug\CryptSharp.pdb" />
+    <Content Include="bin\Debug\CryptSharp.xml" />
+    <Content Include="bin\Debug\Winetech.ldf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="bin\Debug\Winetech.vshost.exe" />
   </ItemGroup>
   <ItemGroup>
     <CodeAnalysisDictionary Include="Winetech.mdf">

@@ -27,10 +27,12 @@ namespace Winetech.View
 
         private void Controle_de_Usuários_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'winetechDataSet.perfil' table. You can move, or remove it, as needed.
+            this.perfilTableAdapter.Fill(this.winetechDataSet.perfil);
             // TODO: This line of code loads data into the 'winetechDataSet.funcoes' table. You can move, or remove it, as needed.
             this.funcoesTableAdapter.Fill(this.winetechDataSet.funcoes);
             // TODO: This line of code loads data into the 'winetechDataSet.usuario' table. You can move, or remove it, as needed.
-            // this.usuarioTableAdapter.Fill(this.winetechDataSet.usuario);
+            this.usuarioTableAdapter.Fill(this.winetechDataSet.usuario);
 
         }
 
@@ -42,6 +44,7 @@ namespace Winetech.View
         private void btnInserir_Click(object sender, EventArgs e)
         {
             Usuario U = new Usuario(txtBxLogin,txtBxSenha,txtBxCPF,txtBxNomeCompleto,Status,cbBxFuncao );
+            U.cadastrarUsuario(U);
         }
 
         private void btnPesquisar_Click(object sender, EventArgs e)
@@ -92,6 +95,19 @@ namespace Winetech.View
         private void rdBtnInativo_CheckedChanged(object sender, EventArgs e)
         {
             Status = 'I';
+        }
+
+        private void fillByToolStripButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.perfilTableAdapter.FillBy(this.winetechDataSet.perfil);
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+
         }
     }
 }

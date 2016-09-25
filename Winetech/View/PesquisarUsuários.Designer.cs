@@ -43,6 +43,8 @@
             this.winetechDataSet = new Winetech.WinetechDataSet();
             this.usuarioTableAdapter = new Winetech.WinetechDataSetTableAdapters.usuarioTableAdapter();
             this.btnPesquisarUsuarios = new System.Windows.Forms.Button();
+            this.btnEditar = new System.Windows.Forms.Button();
+            this.btnExcluir = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtGdVDadosUsuários)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.winetechDataSet)).BeginInit();
@@ -149,11 +151,31 @@
             this.btnPesquisarUsuarios.UseVisualStyleBackColor = true;
             this.btnPesquisarUsuarios.Click += new System.EventHandler(this.button1_Click);
             // 
+            // btnEditar
+            // 
+            this.btnEditar.Location = new System.Drawing.Point(93, 303);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(75, 23);
+            this.btnEditar.TabIndex = 4;
+            this.btnEditar.Text = "Editar";
+            this.btnEditar.UseVisualStyleBackColor = true;
+            // 
+            // btnExcluir
+            // 
+            this.btnExcluir.Location = new System.Drawing.Point(252, 303);
+            this.btnExcluir.Name = "btnExcluir";
+            this.btnExcluir.Size = new System.Drawing.Size(75, 23);
+            this.btnExcluir.TabIndex = 5;
+            this.btnExcluir.Text = "Excluir";
+            this.btnExcluir.UseVisualStyleBackColor = true;
+            // 
             // frmPesquisarUsuários
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(562, 325);
+            this.Controls.Add(this.btnExcluir);
+            this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnPesquisarUsuarios);
             this.Controls.Add(this.dtGdVDadosUsuários);
             this.Controls.Add(this.txtBxPesquisarUsuarios);
@@ -186,5 +208,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn statusUsuarioDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn codigoPerfilDataGridViewTextBoxColumn;
         private System.Windows.Forms.Button btnPesquisarUsuarios;
+        private System.Windows.Forms.Button btnEditar;
+        private System.Windows.Forms.Button btnExcluir;
     }
 }

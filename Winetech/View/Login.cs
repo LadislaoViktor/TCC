@@ -20,8 +20,8 @@ namespace Winetech
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            Controler.Controle_Login CL = new Controler.Controle_Login();
-            if (CL.fazerLoginControl(txtBxLogin.ToString(), txtBxSenha.ToString()) == true)
+            Controler.Controle_Login CL = new Controler.Controle_Login(this.txtBxLogin.ToString(),this.txtBxSenha.ToString());
+            if (CL.fazerLoginControl(this.txtBxLogin.ToString(), this.txtBxSenha.ToString())==true)
             {
                 MessageBox.Show("Login efetuado com sucesso!", "Informação!", MessageBoxButtons.OK);
                 TelaInicial T = new TelaInicial();
