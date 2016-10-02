@@ -170,11 +170,10 @@
     <Compile Include="View\Vendas.Designer.cs">
       <DependentUpon>Vendas.cs</DependentUpon>
     </Compile>
-    <Compile Include="WinetechDataSet.Designer.cs" />
     <Compile Include="WinetechDataSet1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
       <DependentUpon>WinetechDataSet.xsd</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
     </Compile>
     <EmbeddedResource Include="View\CestaDeCompras.resx">
       <DependentUpon>CestaDeCompras.cs</DependentUpon>
@@ -245,9 +244,9 @@
       <DependentUpon>WinetechDataSet.xsd</DependentUpon>
     </None>
     <None Include="WinetechDataSet.xsd">
+      <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>WinetechDataSet1.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
     </None>
     <None Include="WinetechDataSet.xss">
       <DependentUpon>WinetechDataSet.xsd</DependentUpon>
@@ -256,6 +255,7 @@
   <ItemGroup>
     <None Include="App.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
     </None>
   </ItemGroup>
   <ItemGroup>
