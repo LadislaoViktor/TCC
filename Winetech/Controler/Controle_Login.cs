@@ -15,10 +15,12 @@ namespace Winetech.Controler
         }
         public bool fazerLoginControl(string login, string senha)
         {
-            Usuario U = new Usuario(login,senha);
-            if (U == null)
-                MessageBox.Show("Aqui mesmo.");
-            return true;
+            //Usuario U = new Usuario(login,senha);
+            //if (U.login.ToString().Equals("admin")) {
+                return true;
+            //}
+            //else 
+            //    return false;
         }
     }
 }

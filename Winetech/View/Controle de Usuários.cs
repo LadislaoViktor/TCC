@@ -27,15 +27,70 @@ namespace Winetech.View
 
         private void Controle_de_Usuários_Load(object sender, EventArgs e)
         {
+            /*DataTable dt = new DataTable();
+            DataColumn dc1 = new DataColumn("codigoPerfil");
+            DataColumn dc1 = new DataColumn("descricaoPerfil");
+            dt.Columns.Add(dc1);
+            dt.Rows.Add("Administrador");
+            cbBxPerfil.DataSource = dt;
             // TODO: This line of code loads data into the 'winetechDataSet.perfil' table. You can move, or remove it, as needed.
-            this.perfilTableAdapter.Fill(this.winetechDataSet.perfil);
+           cbBxPerfil.DataSource= this.perfilTableAdapter.Fill(this.winetechDataSet.perfil);
             // TODO: This line of code loads data into the 'winetechDataSet.funcoes' table. You can move, or remove it, as needed.
-            this.funcoesTableAdapter.Fill(this.winetechDataSet.funcoes);
+            cbBxFuncao.DataSource= this.funcoesTableAdapter.Fill(this.winetechDataSet.funcoes);
             // TODO: This line of code loads data into the 'winetechDataSet.usuario' table. You can move, or remove it, as needed.
             this.usuarioTableAdapter.Fill(this.winetechDataSet.usuario);
+            */
+            cbBxPerfil.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbBxPerfil.DataSource = opcaoPerfil();
+            cbBxPerfil.ValueMember = "codigoPerfil";
+            cbBxPerfil.DisplayMember = "descricaoPerfil";
+            cbBxPerfil.Update();
 
+            cbBxFuncao.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbBxFuncao.DataSource = opcaoFuncoes();
+            cbBxFuncao.ValueMember = "codigoFuncao";
+            cbBxFuncao.DisplayMember = "descricaoFuncao";
+            cbBxFuncao.Update();
+
+            cbBxTipo.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbBxTipo.DataSource = Tipo();
+            cbBxTipo.ValueMember = "codigoFuncao";
+            cbBxTipo.DisplayMember = "tipo";
+            cbBxTipo.Update();
         }
-
+        public DataTable opcaoPerfil()
+        {
+            DataTable dtPerfil = new DataTable("Perfil");
+            using (SqlConnection Connection = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Winetech\Winetech\Winetech.mdf;Integrated Security=True;Connect Timeout=30;User Instance=False"))
+            using (SqlCommand Command = new SqlCommand("SELECT codigoPerfil,descricaoPerfil FROM dbo.perfil", Connection))
+            {
+                Connection.Open();
+                dtPerfil.Load(Command.ExecuteReader());
+            }
+            return dtPerfil;
+        }
+        public DataTable opcaoFuncoes()
+        {
+            DataTable dtFuncoes = new DataTable("Funcoes");
+            using (SqlConnection Connection = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Winetech\Winetech\Winetech.mdf;Integrated Security=True;Connect Timeout=30;User Instance=False"))
+            using (SqlCommand Command = new SqlCommand("SELECT codigoFuncao,descricaofuncao FROM dbo.funcoes", Connection))
+            {
+                Connection.Open();
+                dtFuncoes.Load(Command.ExecuteReader());
+            }
+            return dtFuncoes;
+        }
+        public DataTable Tipo()
+        {
+            DataTable dtFuncoes = new DataTable("Funcoes");
+            using (SqlConnection Connection = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Winetech\Winetech\Winetech.mdf;Integrated Security=True;Connect Timeout=30;User Instance=False"))
+            using (SqlCommand Command = new SqlCommand("SELECT codigoFuncao,tipo FROM dbo.Funcoes", Connection))
+            {
+                Connection.Open();
+                dtFuncoes.Load(Command.ExecuteReader());
+            }
+            return dtFuncoes;
+        }
         private void chkBxAtivo_CheckedChanged(object sender, EventArgs e)
         {
 
@@ -43,8 +98,15 @@ namespace Winetech.View
 
         private void btnInserir_Click(object sender, EventArgs e)
         {
-            Usuario U = new Usuario(txtBxLogin,txtBxSenha,txtBxCPF,txtBxNomeCompleto,Status,cbBxFuncao );
-            U.cadastrarUsuario(U);
+            Usuario usuario = new Usuario(txtBxLogin.ToString(),txtBxSenha.ToString(),txtBxCPF.ToString(),txtBxNomeCompleto.ToString(),true,1);
+            ControleUsuarios U = new ControleUsuarios();
+            bool cadastro =U.cadastrarUsuários(usuario);
+            if (cadastro == true)
+            {
+                MessageBox.Show("Inserido com sucesso!");
+            }
+            else
+                MessageBox.Show("Falha ao inserir: Verifique os dados e tente novamente!");
         }
 
         private void btnPesquisar_Click(object sender, EventArgs e)
@@ -98,6 +160,19 @@ namespace Winetech.View
         }
 
         private void fillByToolStripButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.perfilTableAdapter.FillBy(this.winetechDataSet.perfil);
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+
+        }
+
+        private void fillByToolStripButton_Click_1(object sender, EventArgs e)
         {
             try
             {
