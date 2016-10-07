@@ -111,6 +111,7 @@ namespace Winetech.View
 
         private void btnPesquisar_Click(object sender, EventArgs e)
         {
+            this.Hide();
             frmPesquisarUsuários P=new frmPesquisarUsuários();
             P.Show();
             /*  string strcon = "Data Source=.\\SQLEXPRESS;AttachDbFilename=C:\\Winetech\\Winetech\\Winetech.mdf;Integrated Security=True;Connect Timeout=30;User Instance=True";

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -26,6 +27,17 @@ namespace Winetech.Controler
                 return false;
             else
                 return true;
+        }
+        protected List<Usuario> pesquisarUsuarios(Usuario usuario) {
+            if (usuario.nomeCompleto == "")
+            {
+                List<Usuario> Lista = new List<Usuario>();
+                return Lista;
+            }
+            else {
+                return null;
+            }
+                
         }
     }
 }

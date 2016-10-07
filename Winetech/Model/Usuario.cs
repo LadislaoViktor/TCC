@@ -78,8 +78,6 @@ namespace Winetech.Model
             Comando.Parameters.AddWithValue("@usuario.statusUsuario", statusUsuario);
             Comando.Parameters.AddWithValue("@usuario.codigoFuncao", codigoFuncao);
             Conexao.Close();
-
-            MessageBox.Show("Alguma coisa.");
             return true;
         }
     }
