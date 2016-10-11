@@ -23,19 +23,24 @@ namespace Winetech.Controler
 
         protected bool validarCamposObrigatorios(Usuario usuario)
         {
-            if ((usuario.nomeCompleto) != null)
-                return false;
-            else
-                return true;
-        }
-        protected List<Usuario> pesquisarUsuarios(Usuario usuario) {
-            if (usuario.nomeCompleto == "")
+            if (usuario.cpfUsuario.ToString().Length == 11)
             {
-                List<Usuario> Lista = new List<Usuario>();
-                return Lista;
+                if ((usuario.nomeCompleto) != "")
+                    return false;
+                else
+                    return true;
+            }
+            else
+                return false; 
+        }
+        public List<Usuario> pesquisarUsuarios(Usuario usuario) {
+            if (usuario.nomeCompleto==null)
+            {
+                return null;
             }
             else {
-                return null;
+                List<Usuario> Lista = new List<Usuario>();
+                return Lista;
             }
                 
         }

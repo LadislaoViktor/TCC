@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Winetech.Controler;
+using Winetech.Model;
 
 namespace Winetech.View
 {
@@ -31,6 +33,15 @@ namespace Winetech.View
 
         private void button1_Click(object sender, EventArgs e)
         {
+            Usuario usuario = new Usuario(txtBxPesquisarUsuarios.ToString());
+            ControleUsuarios C = new ControleUsuarios();
+            if (C.pesquisarUsuarios(usuario) == null)
+            {
+                MessageBox.Show("O nome não pode estar em branco!");
+            }
+            else {
+                MessageBox.Show("Prencher linhas da tabela.");
+            }
 
         }
     }

@@ -34,29 +34,9 @@ namespace Winetech.Model
             this.login = login;
             this.senha = senha;
         }
-
-        //public usuario(textbox txtbxlogin, textbox txtbxsenha, textbox txtbxcpf, textbox txtbxnomecompleto, char status, combobox cbbxfuncao)
-        //{
-        //    this.txtbxlogin = txtbxlogin;
-        //    this.txtbxsenha = txtbxsenha;
-        //    this.txtbxcpf = txtbxcpf;
-        //    this.txtbxnomecompleto = txtbxnomecompleto;
-        //    this.status = status;
-        //    this.cbbxfuncao = cbbxfuncao;
-        //}
-
-        /*public Usuario(string login, string senha)
-        {
-            this.login = login;
-            this.senha = senha;
-        }*/
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="login"></param>
-        /// <param name="senha"></param>
-        /// <returns></returns>
+        public Usuario(string nomeCompleto) {
+            this.nomeCompleto = nomeCompleto;
+        }
         public bool validarLogin(Usuario u)
         {
             SqlConnection Conexao = new SqlConnection(@"Data Source=.\SQLEXPRESS;AttachDbFilename=C:\Winetech\Winetech\Winetech.MDF;Integrated Security=True;Connect Timeout=30;User Instance=True");

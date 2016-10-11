@@ -68,6 +68,9 @@
             // 
             // dtGdVDadosUsuários
             // 
+            this.dtGdVDadosUsuários.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dtGdVDadosUsuários.AutoGenerateColumns = false;
             this.dtGdVDadosUsuários.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtGdVDadosUsuários.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -153,6 +156,7 @@
             // 
             // btnEditar
             // 
+            this.btnEditar.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnEditar.Location = new System.Drawing.Point(93, 303);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(75, 23);
@@ -162,6 +166,7 @@
             // 
             // btnExcluir
             // 
+            this.btnExcluir.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnExcluir.Location = new System.Drawing.Point(252, 303);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(75, 23);
