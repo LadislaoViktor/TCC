@@ -237,6 +237,7 @@
             this.Name = "PesquisarCliente";
             this.Text = "Pesquisar Cliente";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.PesquisarCliente_FormClosing);
             this.Load += new System.EventHandler(this.PesquisarCliente_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).EndInit();

@@ -188,6 +188,7 @@
             this.Name = "frmPesquisarUsuários";
             this.Text = "Pesquisar Usuários";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmPesquisarUsuários_FormClosing);
             this.Load += new System.EventHandler(this.frmPesquisarUsuários_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtGdVDadosUsuários)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).EndInit();

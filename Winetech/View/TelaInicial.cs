@@ -57,5 +57,19 @@ namespace Winetech.View
         {
 
         }
+
+        private void TelaInicial_FormClosing(object sender, FormClosingEventArgs e)
+        {
+                DialogResult resultado= MessageBox.Show("Deseja realmente fechar?", "Atenção", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
+                if (resultado == DialogResult.Yes) {
+                    Application.Exit();
+                }
+                if (resultado == DialogResult.No) {
+                    this.Show();
+                }
+                if(resultado== DialogResult.Cancel) { 
+                    this.Show();
+                }
+        }
     }
 }

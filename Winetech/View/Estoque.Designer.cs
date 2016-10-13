@@ -370,6 +370,7 @@
             this.Name = "Estoque";
             this.Text = "Estoque";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Estoque_FormClosing);
             this.Load += new System.EventHandler(this.Estoque_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nUDTeorAlcolico)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nUDQuantidade)).EndInit();

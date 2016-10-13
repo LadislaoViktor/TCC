@@ -176,6 +176,7 @@ namespace Winetech.View
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tela Inicial";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.TelaInicial_FormClosing);
             this.Load += new System.EventHandler(this.TelaInicial_Load);
             this.flwLPInicial.ResumeLayout(false);
             this.flwLPInicial.PerformLayout();
@@ -185,11 +186,17 @@ namespace Winetech.View
 
         private void button1_Click(object sender, EventArgs e)
         {
-
             this.Hide();
-            /* frmUsuários C = new frmUsuários();
+             frmUsuários C = new frmUsuários();
              C.Show();
-             C.Close();*/
+            
+            /*while (C.IsAccessible)
+            {
+                MessageBox.Show("Va tomar no cú!");
+            }
+                C.Close();
+                TelaInicial T = new TelaInicial();
+                T.Show();
             if (Application.OpenForms.OfType<frmUsuários>().Count() > 0)
             {
                 MessageBox.Show("O Formulario de usuários já está aberto!");
@@ -203,8 +210,8 @@ namespace Winetech.View
 
                 }
                 
-            }
-            TelaInicial.ActiveForm.Activate();
+            }*/
+            //TelaInicial.ActiveForm.Activate();
         }
 
         private void C_FormClosed(object sender, System.Windows.Forms.FormClosedEventArgs e)

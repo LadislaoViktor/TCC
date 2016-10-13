@@ -244,6 +244,7 @@
             this.Name = "Vendas";
             this.Text = "Vendas";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Vendas_FormClosing);
             this.Load += new System.EventHandler(this.Vendas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pedidoClienteBindingSource)).EndInit();

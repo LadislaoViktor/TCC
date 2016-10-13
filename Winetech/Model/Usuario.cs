@@ -25,6 +25,7 @@ namespace Winetech.Model
             this.login = login;
             this.senha = senha;
             this.cpfUsuario = cpfUsuario;
+            this.nomeCompleto = nomeCompleto;
             this.statusUsuario = statusUsuario;
             this.codigoFuncao = codigoFuncao;
 

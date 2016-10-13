@@ -171,6 +171,7 @@
             this.Name = "PesquisarFornecedor";
             this.Text = "Pesquisar Fornecedor";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.PesquisarFornecedor_FormClosing);
             this.Load += new System.EventHandler(this.PesquisarFornecedor_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtGDVFornecedor)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fornecedorBindingSource)).EndInit();

@@ -237,6 +237,7 @@
             this.Name = "Compras";
             this.Text = "Compras";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Compras_FormClosing);
             this.Load += new System.EventHandler(this.Compras_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pedidoFornecedorBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.winetechDataSet)).EndInit();

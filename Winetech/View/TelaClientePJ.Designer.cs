@@ -397,6 +397,7 @@
             this.Name = "TelaClientePJ";
             this.Text = "Cliente Pessoa Juridica";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.TelaClientePJ_FormClosing);
             this.Load += new System.EventHandler(this.TelaClientePJ_Load);
             ((System.ComponentModel.ISupportInitialize)(this.fKCodigoEnderecoFornecedorBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.enderecoFornecedorBindingSource)).EndInit();

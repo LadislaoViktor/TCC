@@ -23,15 +23,10 @@ namespace Winetech.Controler
 
         protected bool validarCamposObrigatorios(Usuario usuario)
         {
-            if (usuario.cpfUsuario.ToString().Length == 11)
-            {
-                if ((usuario.nomeCompleto) != "")
+                if ((usuario.nomeCompleto)!=null)
                     return false;
                 else
-                    return true;
-            }
-            else
-                return false; 
+                    return true; 
         }
         public List<Usuario> pesquisarUsuarios(Usuario usuario) {
             if (usuario.nomeCompleto==null)

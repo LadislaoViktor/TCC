@@ -39,7 +39,24 @@ namespace Winetech
 
         private void btnEsqueciSenha_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Se fodeu!");
+            MessageBox.Show("Solicite o desbloqueio ao administrador!");
+        }
+
+        private void frmLogin_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult resultado = MessageBox.Show("Deseja realmente fechar?", "Atenção", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
+            if (resultado == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+            if (resultado == DialogResult.No)
+            {
+                this.Show();
+            }
+            if (resultado == DialogResult.Cancel)
+            {
+                this.Show();
+            }
         }
     }
 }

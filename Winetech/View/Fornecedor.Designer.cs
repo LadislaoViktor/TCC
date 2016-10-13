@@ -295,6 +295,7 @@
             this.Name = "Fornecedor";
             this.Text = "Fornecedor";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Fornecedor_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 

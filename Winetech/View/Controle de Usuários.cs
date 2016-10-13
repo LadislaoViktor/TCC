@@ -27,36 +27,12 @@ namespace Winetech.View
 
         private void Controle_de_Usuários_Load(object sender, EventArgs e)
         {
-            /*DataTable dt = new DataTable();
-            DataColumn dc1 = new DataColumn("codigoPerfil");
-            DataColumn dc1 = new DataColumn("descricaoPerfil");
-            dt.Columns.Add(dc1);
-            dt.Rows.Add("Administrador");
-            cbBxPerfil.DataSource = dt;
-            // TODO: This line of code loads data into the 'winetechDataSet.perfil' table. You can move, or remove it, as needed.
-           cbBxPerfil.DataSource= this.perfilTableAdapter.Fill(this.winetechDataSet.perfil);
-            // TODO: This line of code loads data into the 'winetechDataSet.funcoes' table. You can move, or remove it, as needed.
-            cbBxFuncao.DataSource= this.funcoesTableAdapter.Fill(this.winetechDataSet.funcoes);
-            // TODO: This line of code loads data into the 'winetechDataSet.usuario' table. You can move, or remove it, as needed.
-            this.usuarioTableAdapter.Fill(this.winetechDataSet.usuario);
-            */
             cbBxPerfil.DropDownStyle = ComboBoxStyle.DropDownList;
             cbBxPerfil.DataSource = opcaoPerfil();
             cbBxPerfil.ValueMember = "codigoPerfil";
             cbBxPerfil.DisplayMember = "descricaoPerfil";
             cbBxPerfil.Update();
 
-            cbBxFuncao.DropDownStyle = ComboBoxStyle.DropDownList;
-            cbBxFuncao.DataSource = opcaoFuncoes();
-            cbBxFuncao.ValueMember = "codigoFuncao";
-            cbBxFuncao.DisplayMember = "descricaoFuncao";
-            cbBxFuncao.Update();
-
-            cbBxTipo.DropDownStyle = ComboBoxStyle.DropDownList;
-            cbBxTipo.DataSource = Tipo();
-            cbBxTipo.ValueMember = "codigoFuncao";
-            cbBxTipo.DisplayMember = "tipo";
-            cbBxTipo.Update();
         }
         public DataTable opcaoPerfil()
         {
@@ -69,6 +45,7 @@ namespace Winetech.View
             }
             return dtPerfil;
         }
+        /*
         public DataTable opcaoFuncoes()
         {
             DataTable dtFuncoes = new DataTable("Funcoes");
@@ -95,7 +72,7 @@ namespace Winetech.View
         {
 
         }
-
+        */
         private void btnInserir_Click(object sender, EventArgs e)
         {
             Usuario usuario = new Usuario(txtBxLogin.ToString(),txtBxSenha.ToString(),txtBxCPF.ToString(),txtBxNomeCompleto.ToString(),true,1);
@@ -184,6 +161,23 @@ namespace Winetech.View
                 System.Windows.Forms.MessageBox.Show(ex.Message);
             }
 
+        }
+
+        private void frmUsuários_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult resultado = MessageBox.Show("Deseja realmente fechar?", "Atenção", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
+            if (resultado == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+            if (resultado == DialogResult.No)
+            {
+                this.Show();
+            }
+            if (resultado == DialogResult.Cancel)
+            {
+                this.Show();
+            }
         }
     }
 }
