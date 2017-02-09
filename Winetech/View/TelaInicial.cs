@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Winetech.View
 {
-    public partial class TelaInicial : Form
+    public partial class TelaInicial : Form 
     {
         public TelaInicial()
         {
@@ -24,33 +24,57 @@ namespace Winetech.View
 
         private void btnClientes_Click(object sender, EventArgs e)
         {
+            this.Hide();
             ClientePF C = new ClientePF();
             C.Show();
+            if (C.IsDisposed == false)
+            {
+                this.Show();
+            }
         }
 
         private void btnCompras_Click(object sender, EventArgs e)
         {
+            this.Hide();
             Compras C = new Compras();
             C.Show();
+            if (C.IsAccessible == false)
+            {
+                this.Show();
+            }
         }
 
         private void btnFornecedores_Click(object sender, EventArgs e)
         {
+            this.Hide();
             Fornecedor F = new Fornecedor();
             F.Show();
+            if (F.IsAccessible == false)
+            {
+                this.Show();
+            }
         }
 
         private void btnVendas_Click(object sender, EventArgs e)
         {
+            this.Hide();
             Vendas V = new Vendas();
             V.Show();
-           
+            if (V.IsAccessible == false)
+            {
+                this.Show();
+            }
         }
 
         private void btnEstoque_Click(object sender, EventArgs e)
         {
+            this.Hide();
             Estoque E = new Estoque();
-            E.ShowDialog();
+            E.Show();
+            if (E.IsAccessible == false)
+            {
+                this.Show();
+            }
         }
 
         private void TelaInicial_Load(object sender, EventArgs e)
@@ -60,16 +84,28 @@ namespace Winetech.View
 
         private void TelaInicial_FormClosing(object sender, FormClosingEventArgs e)
         {
-                DialogResult resultado= MessageBox.Show("Deseja realmente fechar?", "Atenção", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
-                if (resultado == DialogResult.Yes) {
-                    Application.Exit();
-                }
-                if (resultado == DialogResult.No) {
-                    this.Show();
-                }
-                if(resultado== DialogResult.Cancel) { 
-                    this.Show();
-                }
+            if (MessageBox.Show("Deseja realmente fechar?", "Atenção", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+            else
+                e.Cancel = true;
+            
+        }
+
+        private void btnProducao_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnRelatorioFaturamento_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnRelatorioEstoque_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

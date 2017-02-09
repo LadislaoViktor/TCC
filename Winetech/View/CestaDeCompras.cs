@@ -23,5 +23,13 @@ namespace Winetech.View
             this.produtoTableAdapter.Fill(this.winetechDataSet.produto);
 
         }
+
+        private void CestaDeCompras_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (MessageBox.Show("Deseja realmente fechar?", "Atenção", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+            {
+                e.Cancel = true;
+            }
+        }
     }
 }

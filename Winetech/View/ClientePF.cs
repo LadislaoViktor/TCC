@@ -49,5 +49,13 @@ namespace Winetech.View
             Controle_Cliente C=new Controle_Cliente();
             
         }
+
+        private void ClientePF_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (MessageBox.Show("Deseja realmente fechar?", "Atenção", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+            {
+                e.Cancel = true;
+            }
+        }
     }
 }

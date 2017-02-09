@@ -12,21 +12,19 @@ namespace Winetech.Controler
     {
         public bool cadastrarUsuários(Usuario usuario)
         {
-            if (validarCamposObrigatorios(usuario) == true)
-            {
-                usuario.cadastrarUsuario(usuario);
-                return true;
-            }
-            else
+              if (validarCamposObrigatorios(usuario) == true)
+              {
+                  usuario.cadastrarUsuario(usuario);
+                  return true;
+              }
+              else
             return false;
         }
-
-        protected bool validarCamposObrigatorios(Usuario usuario)
+        public bool validarCamposObrigatorios(Usuario usuario)
         {
-                if ((usuario.nomeCompleto)!=null)
-                    return false;
-                else
-                    return true; 
+            if (usuario.nomeCompleto == "")
+                return false;
+            return true;
         }
         public List<Usuario> pesquisarUsuarios(Usuario usuario) {
             if (usuario.nomeCompleto==null)

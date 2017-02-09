@@ -102,6 +102,7 @@ namespace Winetech.View
             this.btnRelatorioFaturamento.Text = "Relatório Faturamento";
             this.btnRelatorioFaturamento.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnRelatorioFaturamento.UseVisualStyleBackColor = false;
+            this.btnRelatorioFaturamento.Click += new System.EventHandler(this.btnRelatorioFaturamento_Click);
             // 
             // btnProducao
             // 
@@ -113,6 +114,7 @@ namespace Winetech.View
             this.btnProducao.Text = "Produção";
             this.btnProducao.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnProducao.UseVisualStyleBackColor = false;
+            this.btnProducao.Click += new System.EventHandler(this.btnProducao_Click);
             // 
             // btnFornecedores
             // 
@@ -145,6 +147,7 @@ namespace Winetech.View
             this.btnRelatorioEstoque.Text = "Relatorio Estoque";
             this.btnRelatorioEstoque.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnRelatorioEstoque.UseVisualStyleBackColor = true;
+            this.btnRelatorioEstoque.Click += new System.EventHandler(this.btnRelatorioEstoque_Click);
             // 
             // flwLPInicial
             // 
@@ -172,6 +175,7 @@ namespace Winetech.View
             this.ClientSize = new System.Drawing.Size(561, 406);
             this.Controls.Add(this.flwLPInicial);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.IsMdiContainer = true;
             this.Name = "TelaInicial";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tela Inicial";
@@ -186,32 +190,14 @@ namespace Winetech.View
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Hide();
+             this.Hide();
              frmUsuários C = new frmUsuários();
              C.Show();
+            if (C.IsDisposed == false)
+            {
             
-            /*while (C.IsAccessible)
-            {
-                MessageBox.Show("Va tomar no cú!");
             }
-                C.Close();
-                TelaInicial T = new TelaInicial();
-                T.Show();
-            if (Application.OpenForms.OfType<frmUsuários>().Count() > 0)
-            {
-                MessageBox.Show("O Formulario de usuários já está aberto!");
-            }
-            else
-            {
-                frmUsuários form = new frmUsuários();
-                form.Show();
-                while (form.IsAccessible)
-                {
-
-                }
-                
-            }*/
-            //TelaInicial.ActiveForm.Activate();
+            this.Show();
         }
 
         private void C_FormClosed(object sender, System.Windows.Forms.FormClosedEventArgs e)

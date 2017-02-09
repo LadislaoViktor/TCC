@@ -216,6 +216,7 @@
             this.Name = "CestaDeCompras";
             this.Text = "Cesta De Compras";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CestaDeCompras_FormClosing);
             this.Load += new System.EventHandler(this.CestaDeCompras_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.produtoBindingSource)).EndInit();

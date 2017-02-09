@@ -437,7 +437,7 @@
             this.Name = "ClientePF";
             this.Text = "Cliente Pessoa Física";
             this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
-            this.Load += new System.EventHandler(this.ClientePF_Load);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ClientePF_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.winetechDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.enderecoClienteBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fkCodigoEnderecoClienteBindingSource)).EndInit();

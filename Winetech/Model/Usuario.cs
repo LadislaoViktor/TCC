@@ -28,7 +28,6 @@ namespace Winetech.Model
             this.nomeCompleto = nomeCompleto;
             this.statusUsuario = statusUsuario;
             this.codigoFuncao = codigoFuncao;
-
         }
         public Usuario(string login,string senha)
         {

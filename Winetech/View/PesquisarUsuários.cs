@@ -47,18 +47,9 @@ namespace Winetech.View
 
         private void frmPesquisarUsuários_FormClosing(object sender, FormClosingEventArgs e)
         {
-            DialogResult resultado = MessageBox.Show("Deseja realmente fechar?", "Atenção", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
-            if (resultado == DialogResult.Yes)
+            if (MessageBox.Show("Deseja realmente fechar?", "Atenção", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
             {
-                Application.Exit();
-            }
-            if (resultado == DialogResult.No)
-            {
-                this.Show();
-            }
-            if (resultado == DialogResult.Cancel)
-            {
-                this.Show();
+                e.Cancel = true;
             }
         }
     }
