@@ -19,12 +19,6 @@ namespace Winetech.View
         {
             InitializeComponent();
         }
-
-        private void cbBxTipo_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void Controle_de_Usuários_Load(object sender, EventArgs e)
         {
             cbBxPerfil.DropDownStyle = ComboBoxStyle.DropDownList;
@@ -45,37 +39,16 @@ namespace Winetech.View
             }
             return dtPerfil;
         }
-        /*
-        public DataTable opcaoFuncoes()
-        {
-            DataTable dtFuncoes = new DataTable("Funcoes");
-            using (SqlConnection Connection = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Winetech\Winetech\Winetech.mdf;Integrated Security=True;Connect Timeout=30;User Instance=False"))
-            using (SqlCommand Command = new SqlCommand("SELECT codigoFuncao,descricaofuncao FROM dbo.funcoes", Connection))
-            {
-                Connection.Open();
-                dtFuncoes.Load(Command.ExecuteReader());
-            }
-            return dtFuncoes;
-        }
-        public DataTable Tipo()
-        {
-            DataTable dtFuncoes = new DataTable("Funcoes");
-            using (SqlConnection Connection = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Winetech\Winetech\Winetech.mdf;Integrated Security=True;Connect Timeout=30;User Instance=False"))
-            using (SqlCommand Command = new SqlCommand("SELECT codigoFuncao,tipo FROM dbo.Funcoes", Connection))
-            {
-                Connection.Open();
-                dtFuncoes.Load(Command.ExecuteReader());
-            }
-            return dtFuncoes;
-        }
-        private void chkBxAtivo_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-        */
         private void btnInserir_Click(object sender, EventArgs e)
         {
-            Usuario usuario = new Usuario(txtBxLogin.ToString(),txtBxSenha.ToString(),txtBxCPF.ToString(),txtBxNomeCompleto.ToString(),rdBtnAtivo.Checked,1);
+            decimal cpf;
+            bool teste=decimal.TryParse(txtBxCPF.Text, out cpf);
+            if (teste == true)
+                MessageBox.Show("deu certo","certodeu", MessageBoxButtons.OK);
+            else
+                MessageBox.Show("erro", "erro", MessageBoxButtons.OK);
+
+            Usuario usuario = new Usuario(txtBxLogin.ToString(), txtBxSenha.ToString(),cpf,txtBxNomeCompleto.ToString(),'a',1);
             ControleUsuarios U = new ControleUsuarios();
             bool cadastro =U.cadastrarUsuários(usuario);
             if (cadastro == true)

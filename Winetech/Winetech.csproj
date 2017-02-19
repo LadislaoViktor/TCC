@@ -55,8 +55,19 @@
       <HintPath>..\packages\CryptSharpOfficial.2.1.0.0\lib\CryptSharp.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -69,12 +80,24 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Ajuda\Criptografia.cs" />
+    <Compile Include="cliente.cs" />
+    <Compile Include="contatoCliente.cs" />
     <Compile Include="Controler\ControleUsuarios.cs" />
     <Compile Include="Controler\Controle_Cliente.cs" />
     <Compile Include="Controler\Controle_Login.cs" />
+    <Compile Include="enderecoCliente.cs" />
+    <Compile Include="enderecoFornecedor.cs" />
+    <Compile Include="fornecedor.cs" />
     <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
     <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
     <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
+    <Compile Include="pais.cs" />
+    <Compile Include="pedidoCliente.cs" />
+    <Compile Include="pedidoFornecedor.cs" />
+    <Compile Include="perfil.cs" />
+    <Compile Include="produto.cs" />
+    <Compile Include="safra.cs" />
+    <Compile Include="Usuario.cs" />
     <Compile Include="View\CestaDeCompras.cs">
       <SubType>Form</SubType>
     </Compile>
