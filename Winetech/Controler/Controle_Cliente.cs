@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Winetech.Model;
 
 namespace Winetech.Controler
@@ -26,3 +22,4 @@ namespace Winetech.Controler
         }
     }
 }
+0

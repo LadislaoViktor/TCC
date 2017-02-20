@@ -47,8 +47,7 @@ namespace Winetech.View
                 MessageBox.Show("deu certo","certodeu", MessageBoxButtons.OK);
             else
                 MessageBox.Show("erro", "erro", MessageBoxButtons.OK);
-
-            Usuario usuario = new Usuario(txtBxLogin.ToString(), txtBxSenha.ToString(),cpf,txtBxNomeCompleto.ToString(),'a',1);
+            Usuario usuario = new Usuario(txtBxLogin.ToString(), txtBxSenha.ToString(),cpf,txtBxNomeCompleto.ToString(),1,1);
             ControleUsuarios U = new ControleUsuarios();
             bool cadastro =U.cadastrarUsuários(usuario);
             if (cadastro == true)

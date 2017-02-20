@@ -1,15 +1,28 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Winetech.Model
+namespace Winetech
 {
-    class Perfil
-    {
-        public int codigoPerfil { get; set; }
-        public string descricaoPerfil { get; set;}
+    using System;
+    using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
+    using System.Data.Entity.Spatial;
 
+    [Table("perfil")]
+    public partial class perfil
+    {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public perfil()
+        {
+            usuario = new HashSet<Usuario>();
+        }
+
+        [Key]
+        public int codigoPerfil { get; set; }
+
+        [Required]
+        [StringLength(30)]
+        public string descricaoPerfil { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Usuario> usuario { get; set; }
     }
 }

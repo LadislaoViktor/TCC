@@ -1,11 +1,5 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using Winetech.Model;
-
 namespace Winetech.Controler
 {
     class ControleUsuarios
@@ -27,10 +21,11 @@ namespace Winetech.Controler
             if (usuario.nomeCompleto.Length ==0)
                 return false;
             else
-            return true;
+                return true;
         }
         public List<Usuario> pesquisarUsuarios(Usuario usuario) {
             if (usuario.nomeCompleto==null)
+                0
             {
                 return null;
             }

@@ -1,71 +1,63 @@
-﻿using System;
-using System.Data.SqlClient;
-
-namespace Winetech.Model
+namespace Winetech
 {
-    class Cliente
+    using System;
+    using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
+    using System.Data.Entity.Spatial;
+
+    [Table("cliente")]
+    public partial class cliente
     {
-        private int codigoCliente { get; set; }
-        private string razaoSocial { get; set; }
-        private string nomeFantasiaCliente { get; set; }
-        private string nomeCompletoCliente { get; set; }
-        private string rG { get; set; }
-        private string cPF { get; set; }
-        private DateTime dataNascimento { get; set; }
-        private string cnpj { get; set; }
-        private string email { get; set; }
-        private bool statusCliente { get; set; }
-        private double limiteCredito { get; set; }
-        private int codigoPedido { get; set; }
-        private int codigoEnderecoCliente { get; set; }
-        private int codigoContatoCliente { get; set; }
+        [Key]
+        public int codigoCliente { get; set; }
 
-        public Cliente(int codigoCliente, string razaoSocial, 
-            string nomeFantasiaCliente, string nomeCompletoCliente,
-            string rG, string cPF, DateTime dataNascimento,
-            string cnpj, string email, bool statusCliente,
-            double limiteCredito, int codigoPedido,
-            int codigoEnderecoCliente, int codigoContatoCliente)
-        {
-            this.codigoCliente = codigoCliente;
-            this.razaoSocial = razaoSocial;
-            this.nomeFantasiaCliente = nomeFantasiaCliente;
-            this.nomeCompletoCliente = nomeCompletoCliente;
-            this.rG = rG;
-            this.cPF = cPF;
-            this.dataNascimento = dataNascimento;
-            this.cnpj = cnpj;
-            this.email = email;
-            this.statusCliente = statusCliente;
-            this.limiteCredito = limiteCredito;                
-        }
-        public Cliente(string razaoSocial,
-            string nomeFantasiaCliente, string nomeCompletoCliente,
-            string rG, string cPF, DateTime dataNascimento,
-            string cnpj, string email, bool statusCliente,
-            double limiteCredito, int codigoPedido,
-            int codigoEnderecoCliente, int codigoContatoCliente)
-        {
-            
-                SqlConnection Conexao = new SqlConnection(@"Data Source=.\SQLEXPRESS;AttachDbFilename=C:\Winetech\Winetech\Winetech.MDF;Integrated Security=True;Connect Timeout=30;User Instance=True");
-                Conexao.Open();
-                SqlCommand Comando = new SqlCommand("insert into enderecoCliente values(1,'PR','Colombo','Paloma','87654321','Rua das Camélias','79','Casa')");
-                Conexao.Close();
-            /*
-            this.razaoSocial = razaoSocial;
-            this.nomeFantasiaCliente = nomeFantasiaCliente;
-            this.nomeCompletoCliente = nomeCompletoCliente;
-            this.rG = rG;
-            this.cPF = cPF;
-            this.dataNascimento = dataNascimento;
-            this.cnpj = cnpj;
-            this.email = email;
-            this.statusCliente = statusCliente;
-            this.limiteCredito = limiteCredito;*/
+        [Required]
+        [StringLength(300)]
+        public string razaosocial { get; set; }
 
-        }
+        [Required]
+        [StringLength(80)]
+        public string nomefantasia { get; set; }
 
-        
+        [Required]
+        [StringLength(150)]
+        public string nomecompleto { get; set; }
+
+        [Required]
+        [StringLength(14)]
+        public string rg { get; set; }
+
+        [Required]
+        [StringLength(11)]
+        public string cpf { get; set; }
+
+        [Column(TypeName = "date")]
+        public DateTime datanascimento { get; set; }
+
+        [Required]
+        [StringLength(14)]
+        public string cnpjcliente { get; set; }
+
+        [Required]
+        [StringLength(150)]
+        public string emailcliente { get; set; }
+
+        public bool? statuscliente { get; set; }
+
+        [Column(TypeName = "money")]
+        public decimal limitecredito { get; set; }
+
+        public int? codigoEnderecoCliente { get; set; }
+
+        public int? codigoContatoCliente { get; set; }
+
+        public int? codigoPedidoCliente { get; set; }
+
+        public virtual contatoCliente contatoCliente { get; set; }
+
+        public virtual enderecoCliente enderecoCliente { get; set; }
+
+        public virtual pedidoCliente pedidoCliente { get; set; }
     }
-       
 }

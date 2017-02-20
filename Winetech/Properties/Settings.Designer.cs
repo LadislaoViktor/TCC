@@ -26,8 +26,8 @@ namespace Winetech.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\Winetech.mdf;" +
-            "Integrated Security=True;Connect Timeout=30")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Winetech\\Winetech\\Winetech" +
+            ".mdf;Integrated Security=True;Connect Timeout=30;User Instance=False;")]
         public string WinetechConnectionString {
             get {
                 return ((string)(this["WinetechConnectionString"]));
