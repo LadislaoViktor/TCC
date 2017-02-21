@@ -1,15 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Winetech.Controler;
-using Winetech.Model;
 
 namespace Winetech.View
 {
@@ -41,13 +34,7 @@ namespace Winetech.View
         }
         private void btnInserir_Click(object sender, EventArgs e)
         {
-            decimal cpf;
-            bool teste=decimal.TryParse(txtBxCPF.Text, out cpf);
-            if (teste == true)
-                MessageBox.Show("deu certo","certodeu", MessageBoxButtons.OK);
-            else
-                MessageBox.Show("erro", "erro", MessageBoxButtons.OK);
-            Usuario usuario = new Usuario(txtBxLogin.ToString(), txtBxSenha.ToString(),cpf,txtBxNomeCompleto.ToString(),1,1);
+            Usuario usuario = new Usuario(txtBxLogin.ToString(), txtBxSenha.ToString(),txtBxCPF.Text.ToString(),txtBxNomeCompleto.ToString(),true,1);
             ControleUsuarios U = new ControleUsuarios();
             bool cadastro =U.cadastrarUsuários(usuario);
             if (cadastro == true)

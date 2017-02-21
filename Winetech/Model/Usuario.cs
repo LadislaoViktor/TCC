@@ -9,6 +9,8 @@
     [Table("usuario")]
     public partial class Usuario
     {
+        private string v;
+
         [Key]
         public int codigoUsuario { get; set; }
 
@@ -42,6 +44,15 @@
             this.nomecompleto = nomeCompleto;
             this.statusUsuario = statusUsuario;
             this.codigoPerfil = codigoPerfil;
+        }
+        public Usuario(string nomecompleto)
+        {
+            this.nomecompleto = nomecompleto;
+        }
+        public bool cadastrarUsuario(Usuario usuario)
+        {
+
+            return true;
         }
     }
     

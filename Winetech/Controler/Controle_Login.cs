@@ -1,4 +1,4 @@
-﻿using Winetech.Model;
+﻿
 using System.Windows.Forms;
 
 namespace Winetech.Controler
@@ -24,4 +24,3 @@ namespace Winetech.Controler
         }
     }
 }
-ç

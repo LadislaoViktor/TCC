@@ -1,5 +1,4 @@
 ﻿using System;
-using Winetech.Model;
 
 namespace Winetech.Controler
 {
@@ -11,15 +10,12 @@ namespace Winetech.Controler
             string cnpj, string email, bool statusCliente,
             double limiteCredito, int codigoPedido,
             int codigoEnderecoCliente, int codigoContatoCliente) {
-            Cliente C = new Cliente(razaoSocial,nomeFantasiaCliente,nomeCompletoCliente,
+            cliente C = new cliente(razaoSocial,nomeFantasiaCliente,nomeCompletoCliente,
                 rG,cPF,dataNascimento,
                 cnpj,email,statusCliente,
                 limiteCredito,codigoPedido,
                 codigoEnderecoCliente,codigoContatoCliente);
-            
-
             return true;
         }
     }
 }
-0

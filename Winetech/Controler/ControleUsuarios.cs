@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using Winetech.Model;
 namespace Winetech.Controler
 {
     class ControleUsuarios
@@ -18,14 +17,13 @@ namespace Winetech.Controler
         }
         public bool validarCamposObrigatorios(Usuario usuario)
         {
-            if (usuario.nomeCompleto.Length ==0)
+            if (usuario.nomecompleto.Length==0)
                 return false;
             else
                 return true;
         }
         public List<Usuario> pesquisarUsuarios(Usuario usuario) {
-            if (usuario.nomeCompleto==null)
-                0
+            if (usuario.nomecompleto==null)
             {
                 return null;
             }
