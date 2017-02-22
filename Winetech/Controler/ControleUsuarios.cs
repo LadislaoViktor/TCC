@@ -1,13 +1,15 @@
 ﻿using System.Collections.Generic;
+using Winetech.Model;
+
 namespace Winetech.Controler
 {
     class ControleUsuarios
     {
-        public bool cadastrarUsuários(Usuario usuario)
+        public bool cadastrarUsuários(usuario usuario)
         {
               if (validarCamposObrigatorios(usuario) == true)
               {
-                  if(usuario.cadastrarUsuario(usuario)==true)
+                  if(usuario.inserir(usuario)==true)
                     return true;
                   else
                     return false;
@@ -15,23 +17,23 @@ namespace Winetech.Controler
               else
             return false;
         }
-        public bool validarCamposObrigatorios(Usuario usuario)
+        public bool validarCamposObrigatorios(usuario usuario)
         {
             if (usuario.nomecompleto.Length==0)
                 return false;
             else
                 return true;
         }
-        public List<Usuario> pesquisarUsuarios(Usuario usuario) {
+       /* public List<Usuario> pesquisarUsuarios(usuario usuario) {
             if (usuario.nomecompleto==null)
             {
                 return null;
             }
             else {
-                List<Usuario> Lista = new List<Usuario>();
+                List<usuario> Lista = new List<usuario>();
                 return Lista;
             }
                 
-        }
+        }*/
     }
 }

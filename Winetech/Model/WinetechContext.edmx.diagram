@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="57f6ff2c978c485ba67ccbacbc597fcc" Name="Diagram1">
+        <EntityTypeShape EntityType="Winetech.Model.cliente" Width="1.5" PointX="3" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Winetech.Model.contatoCliente" Width="1.5" PointX="0.75" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Winetech.Model.enderecoCliente" Width="1.5" PointX="0.75" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="Winetech.Model.enderecoFornecedor" Width="1.5" PointX="8.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="Winetech.Model.fornecedor" Width="1.5" PointX="11" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="Winetech.Model.pais" Width="1.5" PointX="3.75" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Winetech.Model.pedidoCliente" Width="1.5" PointX="0.75" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Winetech.Model.pedidoFornecedor" Width="1.5" PointX="13.25" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Winetech.Model.perfil" Width="1.5" PointX="8.75" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Winetech.Model.produto" Width="1.5" PointX="6" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Winetech.Model.safra" Width="1.5" PointX="3.75" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Winetech.Model.usuario" Width="1.5" PointX="11" PointY="5" IsExpanded="true" />
+        <AssociationConnector Association="Winetech.Model.fkCodContatoCliente" ManuallyRouted="false" />
+        <AssociationConnector Association="Winetech.Model.fkCodigoEnderecoCliente" ManuallyRouted="false" />
+        <AssociationConnector Association="Winetech.Model.FKCodigoPedidoCliente" ManuallyRouted="false" />
+        <AssociationConnector Association="Winetech.Model.FKCodigoEnderecoFornecedor" ManuallyRouted="false" />
+        <AssociationConnector Association="Winetech.Model.FKCodigoPais" ManuallyRouted="false" />
+        <AssociationConnector Association="Winetech.Model.fkCodigoPerfil" ManuallyRouted="false" />
+        <AssociationConnector Association="Winetech.Model.FKCodigoSafra" ManuallyRouted="false" />
+        <AssociationConnector Association="Winetech.Model.fornece" ManuallyRouted="false" />
+        <AssociationConnector Association="Winetech.Model.itensPedidoCliente" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

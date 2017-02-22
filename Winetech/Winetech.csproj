@@ -83,22 +83,61 @@
     <Compile Include="Controler\ControleUsuarios.cs" />
     <Compile Include="Controler\Controle_Cliente.cs" />
     <Compile Include="Controler\Controle_Login.cs" />
-    <Compile Include="Model\cliente.cs" />
-    <Compile Include="Model\contatoCliente.cs" />
-    <Compile Include="Model\enderecoCliente.cs" />
-    <Compile Include="Model\enderecoFornecedor.cs" />
-    <Compile Include="Model\fornecedor.cs" />
-    <Compile Include="Model\pais.cs" />
-    <Compile Include="Model\pedidoCliente.cs" />
-    <Compile Include="Model\pedidoFornecedor.cs" />
-    <Compile Include="Model\perfil.cs" />
-    <Compile Include="Model\produto.cs" />
-    <Compile Include="Model\Program.cs" />
-    <Compile Include="Model\safra.cs" />
-    <Compile Include="Model\Usuario.cs" />
+    <Compile Include="Model\cliente.cs">
+      <DependentUpon>WinetechContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\contatoCliente.cs">
+      <DependentUpon>WinetechContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\enderecoCliente.cs">
+      <DependentUpon>WinetechContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\enderecoFornecedor.cs">
+      <DependentUpon>WinetechContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\fornecedor.cs">
+      <DependentUpon>WinetechContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\pais.cs">
+      <DependentUpon>WinetechContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\pedidoCliente.cs">
+      <DependentUpon>WinetechContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\pedidoFornecedor.cs">
+      <DependentUpon>WinetechContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\perfil.cs">
+      <DependentUpon>WinetechContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\produto.cs">
+      <DependentUpon>WinetechContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\safra.cs">
+      <DependentUpon>WinetechContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\usuario.cs">
+      <DependentUpon>WinetechContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\WinetechContext.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WinetechContext.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\WinetechContext.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WinetechContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\WinetechContext.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WinetechContext.edmx</DependentUpon>
+    </Compile>
     <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
     <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
     <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="View\CestaDeCompras.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -244,7 +283,14 @@
     <None Include="bin\Debug\Winetech.exe.config" />
     <None Include="bin\Debug\Winetech.vshost.exe.config" />
     <None Include="bin\Debug\Winetech.vshost.exe.manifest" />
-    <None Include="Model\packages.config" />
+    <EntityDeploy Include="Model\WinetechContext.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>WinetechContext.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Model\WinetechContext.edmx.diagram">
+      <DependentUpon>WinetechContext.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -291,6 +337,16 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Model\WinetechContext.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>WinetechContext.edmx</DependentUpon>
+      <LastGenOutput>WinetechContext.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Model\WinetechContext.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>WinetechContext.edmx</DependentUpon>
+      <LastGenOutput>WinetechContext.cs</LastGenOutput>
+    </Content>
     <None Include="Resources\vinho.jpg" />
     <Content Include="bin\Debug\CryptSharp.dll" />
     <Content Include="bin\Debug\CryptSharp.pdb" />
@@ -299,6 +355,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="bin\Debug\Winetech.vshost.exe" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

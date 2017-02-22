@@ -25,7 +25,7 @@ namespace Winetech.View
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Usuario usuario = new Usuario(txtBxPesquisarUsuarios.ToString());
+           /* usuario usuario = new usuario(txtBxPesquisarUsuarios.ToString());
             ControleUsuarios C = new ControleUsuarios();
             if (C.pesquisarUsuarios(usuario) == null)
             {
@@ -34,7 +34,7 @@ namespace Winetech.View
             else {
                 MessageBox.Show("Prencher linhas da tabela.");
             }
-
+            */
         }
 
         private void frmPesquisarUsuários_FormClosing(object sender, FormClosingEventArgs e)

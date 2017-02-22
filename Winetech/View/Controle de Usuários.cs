@@ -3,6 +3,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 using Winetech.Controler;
+using Winetech.Model;
 
 namespace Winetech.View
 {
@@ -34,9 +35,9 @@ namespace Winetech.View
         }
         private void btnInserir_Click(object sender, EventArgs e)
         {
-            Usuario usuario = new Usuario(txtBxLogin.ToString(), txtBxSenha.ToString(),txtBxCPF.Text.ToString(),txtBxNomeCompleto.ToString(),true,1);
+            usuario u = new usuario(txtBxLogin.ToString(), txtBxSenha.ToString(),txtBxCPF.Text.ToString(),txtBxNomeCompleto.ToString(),true,1);
             ControleUsuarios U = new ControleUsuarios();
-            bool cadastro =U.cadastrarUsuários(usuario);
+            bool cadastro =U.cadastrarUsuários(u);
             if (cadastro == true)
             {
                 MessageBox.Show("Inserido com sucesso!");

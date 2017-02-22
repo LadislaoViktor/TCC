@@ -1,0 +1,873 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Winetech.Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="cliente">
+          <Key>
+            <PropertyRef Name="codigoCliente" />
+          </Key>
+          <Property Name="codigoCliente" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="razaosocial" Type="varchar" MaxLength="300" Nullable="false" />
+          <Property Name="nomefantasia" Type="varchar" MaxLength="80" Nullable="false" />
+          <Property Name="nomecompleto" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="rg" Type="varchar" MaxLength="14" Nullable="false" />
+          <Property Name="cpf" Type="varchar" MaxLength="11" Nullable="false" />
+          <Property Name="datanascimento" Type="date" Nullable="false" />
+          <Property Name="cnpjcliente" Type="varchar" MaxLength="14" Nullable="false" />
+          <Property Name="emailcliente" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="statuscliente" Type="bit" />
+          <Property Name="limitecredito" Type="money" Nullable="false" />
+          <Property Name="codigoEnderecoCliente" Type="int" />
+          <Property Name="codigoContatoCliente" Type="int" />
+          <Property Name="codigoPedidoCliente" Type="int" />
+        </EntityType>
+        <EntityType Name="contatoCliente">
+          <Key>
+            <PropertyRef Name="codigoContatoCliente" />
+          </Key>
+          <Property Name="codigoContatoCliente" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="dddCliente" Type="varchar" MaxLength="3" Nullable="false" />
+          <Property Name="numeroContatoCliente" Type="varchar" MaxLength="9" Nullable="false" />
+          <Property Name="statusContatoCliente" Type="bit" />
+        </EntityType>
+        <EntityType Name="enderecoCliente">
+          <Key>
+            <PropertyRef Name="codigoEnderecoCliente" />
+          </Key>
+          <Property Name="codigoEnderecoCliente" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="estado" Type="varchar" MaxLength="2" Nullable="false" />
+          <Property Name="cidade" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="bairro" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="CEP" Type="varchar" MaxLength="8" Nullable="false" />
+          <Property Name="rua" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="numero" Type="varchar" MaxLength="4" Nullable="false" />
+          <Property Name="Complemento" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="statusEnderecoCliente" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="enderecoFornecedor">
+          <Key>
+            <PropertyRef Name="codigoEnderecoFornecedor" />
+          </Key>
+          <Property Name="codigoEnderecoFornecedor" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="estado" Type="varchar" MaxLength="2" />
+          <Property Name="cidade" Type="varchar" MaxLength="50" />
+          <Property Name="bairro" Type="varchar" MaxLength="50" />
+          <Property Name="CEP" Type="varchar" MaxLength="8" />
+          <Property Name="rua" Type="varchar" MaxLength="150" />
+          <Property Name="numero" Type="varchar" MaxLength="4" />
+          <Property Name="complemento" Type="varchar" MaxLength="30" />
+          <Property Name="statusEnderecoFornecedor" Type="bit" />
+        </EntityType>
+        <EntityType Name="fornece">
+          <Key>
+            <PropertyRef Name="codigoPedidoFornecedor" />
+            <PropertyRef Name="codigoFornecedor" />
+          </Key>
+          <Property Name="codigoPedidoFornecedor" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="codigoFornecedor" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="fornecedor">
+          <Key>
+            <PropertyRef Name="codigoFornecedor" />
+          </Key>
+          <Property Name="codigoFornecedor" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="cnpjFornecedor" Type="varchar" MaxLength="14" />
+          <Property Name="razaoSocialFornecedor" Type="varchar" MaxLength="150" />
+          <Property Name="nomeFantasiaFornecedor" Type="varchar" MaxLength="150" />
+          <Property Name="emailFornecedor" Type="varchar" MaxLength="150" />
+          <Property Name="telefoneFornecedor" Type="varchar" MaxLength="9" />
+          <Property Name="statusFornecedor" Type="bit" />
+          <Property Name="codigoEnderecoFornecedor" Type="int" />
+        </EntityType>
+        <EntityType Name="itensPedidoCliente">
+          <Key>
+            <PropertyRef Name="codigoPedido" />
+            <PropertyRef Name="codigoProduto" />
+          </Key>
+          <Property Name="codigoPedido" Type="int" Nullable="false" />
+          <Property Name="codigoProduto" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="pais">
+          <Key>
+            <PropertyRef Name="codigoPais" />
+          </Key>
+          <Property Name="codigoPais" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nomePais" Type="varchar" MaxLength="150" Nullable="false" />
+        </EntityType>
+        <EntityType Name="pedidoCliente">
+          <Key>
+            <PropertyRef Name="codigoPedido" />
+          </Key>
+          <Property Name="codigoPedido" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="dataPedido" Type="date" Nullable="false" />
+          <Property Name="statusPedido" Type="bit" />
+          <Property Name="statusPagamentoPedido" Type="char" MaxLength="1" />
+          <Property Name="quantidade" Type="int" Nullable="false" />
+          <Property Name="precoUnitario" Type="money" Nullable="false" />
+          <Property Name="totalPedido" Type="money" Nullable="false" />
+        </EntityType>
+        <EntityType Name="pedidoFornecedor">
+          <Key>
+            <PropertyRef Name="codigoPedidoFornecedor" />
+          </Key>
+          <Property Name="codigoPedidoFornecedor" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="totalPedidoFornecedor" Type="money" />
+          <Property Name="quantidadePedidoFornecedor" Type="int" />
+          <Property Name="dataCompraPedido" Type="date" />
+          <Property Name="precoUnitario" Type="money" />
+          <Property Name="statusPedidofornecedor" Type="bit" />
+        </EntityType>
+        <EntityType Name="perfil">
+          <Key>
+            <PropertyRef Name="codigoPerfil" />
+          </Key>
+          <Property Name="codigoPerfil" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="descricaoPerfil" Type="varchar" MaxLength="30" Nullable="false" />
+        </EntityType>
+        <EntityType Name="produto">
+          <Key>
+            <PropertyRef Name="codigoProduto" />
+          </Key>
+          <Property Name="codigoProduto" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nome" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="descricao" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="uva" Type="varchar" MaxLength="50" />
+          <Property Name="classe" Type="varchar" MaxLength="50" />
+          <Property Name="teor_Alcolico" Type="varchar" MaxLength="2" />
+          <Property Name="tipo" Type="varchar" MaxLength="30" />
+          <Property Name="custoUnitário" Type="numeric" Precision="10" Scale="0" Nullable="false" />
+          <Property Name="quantidadeEstoque" Type="numeric" Precision="4" Scale="0" Nullable="false" />
+          <Property Name="precoVenda" Type="money" Nullable="false" />
+          <Property Name="unidade" Type="varchar" MaxLength="3" />
+          <Property Name="dataValidade" Type="date" />
+          <Property Name="codigoPais" Type="int" />
+          <Property Name="codigoSafra" Type="int" />
+          <Property Name="statusProduto" Type="bit" />
+        </EntityType>
+        <EntityType Name="safra">
+          <Key>
+            <PropertyRef Name="codigoSafra" />
+          </Key>
+          <Property Name="codigoSafra" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="descricao" Type="varchar" MaxLength="4" Nullable="false" />
+        </EntityType>
+        <EntityType Name="usuario">
+          <Key>
+            <PropertyRef Name="codigoUsuario" />
+          </Key>
+          <Property Name="codigoUsuario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="llogin" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="senha" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="cpfUsuario" Type="varchar" MaxLength="11" Nullable="false" />
+          <Property Name="nomecompleto" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="statusUsuario" Type="bit" />
+          <Property Name="codigoPerfil" Type="int" />
+        </EntityType>
+        <Association Name="fkCodContatoCliente">
+          <End Role="contatoCliente" Type="Self.contatoCliente" Multiplicity="0..1" />
+          <End Role="cliente" Type="Self.cliente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="contatoCliente">
+              <PropertyRef Name="codigoContatoCliente" />
+            </Principal>
+            <Dependent Role="cliente">
+              <PropertyRef Name="codigoContatoCliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fkCodigoEnderecoCliente">
+          <End Role="enderecoCliente" Type="Self.enderecoCliente" Multiplicity="0..1" />
+          <End Role="cliente" Type="Self.cliente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="enderecoCliente">
+              <PropertyRef Name="codigoEnderecoCliente" />
+            </Principal>
+            <Dependent Role="cliente">
+              <PropertyRef Name="codigoEnderecoCliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKCodigoEnderecoFornecedor">
+          <End Role="enderecoFornecedor" Type="Self.enderecoFornecedor" Multiplicity="0..1" />
+          <End Role="fornecedor" Type="Self.fornecedor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="enderecoFornecedor">
+              <PropertyRef Name="codigoEnderecoFornecedor" />
+            </Principal>
+            <Dependent Role="fornecedor">
+              <PropertyRef Name="codigoEnderecoFornecedor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKCodigoPais">
+          <End Role="pais" Type="Self.pais" Multiplicity="0..1" />
+          <End Role="produto" Type="Self.produto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="pais">
+              <PropertyRef Name="codigoPais" />
+            </Principal>
+            <Dependent Role="produto">
+              <PropertyRef Name="codigoPais" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKCodigoPedido">
+          <End Role="pedidoCliente" Type="Self.pedidoCliente" Multiplicity="1" />
+          <End Role="itensPedidoCliente" Type="Self.itensPedidoCliente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="pedidoCliente">
+              <PropertyRef Name="codigoPedido" />
+            </Principal>
+            <Dependent Role="itensPedidoCliente">
+              <PropertyRef Name="codigoPedido" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKCodigoPedidoCliente">
+          <End Role="pedidoCliente" Type="Self.pedidoCliente" Multiplicity="0..1" />
+          <End Role="cliente" Type="Self.cliente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="pedidoCliente">
+              <PropertyRef Name="codigoPedido" />
+            </Principal>
+            <Dependent Role="cliente">
+              <PropertyRef Name="codigoPedidoCliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fkCodigoPerfil">
+          <End Role="perfil" Type="Self.perfil" Multiplicity="0..1" />
+          <End Role="usuario" Type="Self.usuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="perfil">
+              <PropertyRef Name="codigoPerfil" />
+            </Principal>
+            <Dependent Role="usuario">
+              <PropertyRef Name="codigoPerfil" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKCodigoProduto">
+          <End Role="produto" Type="Self.produto" Multiplicity="1" />
+          <End Role="itensPedidoCliente" Type="Self.itensPedidoCliente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="produto">
+              <PropertyRef Name="codigoProduto" />
+            </Principal>
+            <Dependent Role="itensPedidoCliente">
+              <PropertyRef Name="codigoProduto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKCodigoSafra">
+          <End Role="safra" Type="Self.safra" Multiplicity="0..1" />
+          <End Role="produto" Type="Self.produto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="safra">
+              <PropertyRef Name="codigoSafra" />
+            </Principal>
+            <Dependent Role="produto">
+              <PropertyRef Name="codigoSafra" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PKCodigoFornecedorf1">
+          <End Role="fornecedor" Type="Self.fornecedor" Multiplicity="1" />
+          <End Role="fornece" Type="Self.fornece" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="fornecedor">
+              <PropertyRef Name="codigoFornecedor" />
+            </Principal>
+            <Dependent Role="fornece">
+              <PropertyRef Name="codigoFornecedor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="pkCodigoPedidoFornecedorf1">
+          <End Role="pedidoFornecedor" Type="Self.pedidoFornecedor" Multiplicity="1" />
+          <End Role="fornece" Type="Self.fornece" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="pedidoFornecedor">
+              <PropertyRef Name="codigoPedidoFornecedor" />
+            </Principal>
+            <Dependent Role="fornece">
+              <PropertyRef Name="codigoPedidoFornecedor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="WinetechModelStoreContainer">
+          <EntitySet Name="cliente" EntityType="Self.cliente" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="contatoCliente" EntityType="Self.contatoCliente" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="enderecoCliente" EntityType="Self.enderecoCliente" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="enderecoFornecedor" EntityType="Self.enderecoFornecedor" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="fornece" EntityType="Self.fornece" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="fornecedor" EntityType="Self.fornecedor" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="itensPedidoCliente" EntityType="Self.itensPedidoCliente" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="pais" EntityType="Self.pais" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="pedidoCliente" EntityType="Self.pedidoCliente" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="pedidoFornecedor" EntityType="Self.pedidoFornecedor" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="perfil" EntityType="Self.perfil" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="produto" EntityType="Self.produto" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="safra" EntityType="Self.safra" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="usuario" EntityType="Self.usuario" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="fkCodContatoCliente" Association="Self.fkCodContatoCliente">
+            <End Role="contatoCliente" EntitySet="contatoCliente" />
+            <End Role="cliente" EntitySet="cliente" />
+          </AssociationSet>
+          <AssociationSet Name="fkCodigoEnderecoCliente" Association="Self.fkCodigoEnderecoCliente">
+            <End Role="enderecoCliente" EntitySet="enderecoCliente" />
+            <End Role="cliente" EntitySet="cliente" />
+          </AssociationSet>
+          <AssociationSet Name="FKCodigoEnderecoFornecedor" Association="Self.FKCodigoEnderecoFornecedor">
+            <End Role="enderecoFornecedor" EntitySet="enderecoFornecedor" />
+            <End Role="fornecedor" EntitySet="fornecedor" />
+          </AssociationSet>
+          <AssociationSet Name="FKCodigoPais" Association="Self.FKCodigoPais">
+            <End Role="pais" EntitySet="pais" />
+            <End Role="produto" EntitySet="produto" />
+          </AssociationSet>
+          <AssociationSet Name="FKCodigoPedido" Association="Self.FKCodigoPedido">
+            <End Role="pedidoCliente" EntitySet="pedidoCliente" />
+            <End Role="itensPedidoCliente" EntitySet="itensPedidoCliente" />
+          </AssociationSet>
+          <AssociationSet Name="FKCodigoPedidoCliente" Association="Self.FKCodigoPedidoCliente">
+            <End Role="pedidoCliente" EntitySet="pedidoCliente" />
+            <End Role="cliente" EntitySet="cliente" />
+          </AssociationSet>
+          <AssociationSet Name="fkCodigoPerfil" Association="Self.fkCodigoPerfil">
+            <End Role="perfil" EntitySet="perfil" />
+            <End Role="usuario" EntitySet="usuario" />
+          </AssociationSet>
+          <AssociationSet Name="FKCodigoProduto" Association="Self.FKCodigoProduto">
+            <End Role="produto" EntitySet="produto" />
+            <End Role="itensPedidoCliente" EntitySet="itensPedidoCliente" />
+          </AssociationSet>
+          <AssociationSet Name="FKCodigoSafra" Association="Self.FKCodigoSafra">
+            <End Role="safra" EntitySet="safra" />
+            <End Role="produto" EntitySet="produto" />
+          </AssociationSet>
+          <AssociationSet Name="PKCodigoFornecedorf1" Association="Self.PKCodigoFornecedorf1">
+            <End Role="fornecedor" EntitySet="fornecedor" />
+            <End Role="fornece" EntitySet="fornece" />
+          </AssociationSet>
+          <AssociationSet Name="pkCodigoPedidoFornecedorf1" Association="Self.pkCodigoPedidoFornecedorf1">
+            <End Role="pedidoFornecedor" EntitySet="pedidoFornecedor" />
+            <End Role="fornece" EntitySet="fornece" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Winetech.Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="cliente">
+          <Key>
+            <PropertyRef Name="codigoCliente" />
+          </Key>
+          <Property Name="codigoCliente" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="razaosocial" Type="String" MaxLength="300" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="nomefantasia" Type="String" MaxLength="80" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="nomecompleto" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="rg" Type="String" MaxLength="14" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="cpf" Type="String" MaxLength="11" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="datanascimento" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="cnpjcliente" Type="String" MaxLength="14" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="emailcliente" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="statuscliente" Type="Boolean" />
+          <Property Name="limitecredito" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="codigoEnderecoCliente" Type="Int32" />
+          <Property Name="codigoContatoCliente" Type="Int32" />
+          <Property Name="codigoPedidoCliente" Type="Int32" />
+          <NavigationProperty Name="contatoCliente" Relationship="Self.fkCodContatoCliente" FromRole="cliente" ToRole="contatoCliente" />
+          <NavigationProperty Name="enderecoCliente" Relationship="Self.fkCodigoEnderecoCliente" FromRole="cliente" ToRole="enderecoCliente" />
+          <NavigationProperty Name="pedidoCliente" Relationship="Self.FKCodigoPedidoCliente" FromRole="cliente" ToRole="pedidoCliente" />
+        </EntityType>
+        <EntityType Name="contatoCliente">
+          <Key>
+            <PropertyRef Name="codigoContatoCliente" />
+          </Key>
+          <Property Name="codigoContatoCliente" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="dddCliente" Type="String" MaxLength="3" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="numeroContatoCliente" Type="String" MaxLength="9" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="statusContatoCliente" Type="Boolean" />
+          <NavigationProperty Name="cliente" Relationship="Self.fkCodContatoCliente" FromRole="contatoCliente" ToRole="cliente" />
+        </EntityType>
+        <EntityType Name="enderecoCliente">
+          <Key>
+            <PropertyRef Name="codigoEnderecoCliente" />
+          </Key>
+          <Property Name="codigoEnderecoCliente" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="estado" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="cidade" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="bairro" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CEP" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="rua" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="numero" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Complemento" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="statusEnderecoCliente" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="cliente" Relationship="Self.fkCodigoEnderecoCliente" FromRole="enderecoCliente" ToRole="cliente" />
+        </EntityType>
+        <EntityType Name="enderecoFornecedor">
+          <Key>
+            <PropertyRef Name="codigoEnderecoFornecedor" />
+          </Key>
+          <Property Name="codigoEnderecoFornecedor" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="estado" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="cidade" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="bairro" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CEP" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Name="rua" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="numero" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="complemento" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="statusEnderecoFornecedor" Type="Boolean" />
+          <NavigationProperty Name="fornecedor" Relationship="Self.FKCodigoEnderecoFornecedor" FromRole="enderecoFornecedor" ToRole="fornecedor" />
+        </EntityType>
+        <EntityType Name="fornecedor">
+          <Key>
+            <PropertyRef Name="codigoFornecedor" />
+          </Key>
+          <Property Name="codigoFornecedor" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="cnpjFornecedor" Type="String" MaxLength="14" FixedLength="false" Unicode="false" />
+          <Property Name="razaoSocialFornecedor" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="nomeFantasiaFornecedor" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="emailFornecedor" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="telefoneFornecedor" Type="String" MaxLength="9" FixedLength="false" Unicode="false" />
+          <Property Name="statusFornecedor" Type="Boolean" />
+          <Property Name="codigoEnderecoFornecedor" Type="Int32" />
+          <NavigationProperty Name="enderecoFornecedor" Relationship="Self.FKCodigoEnderecoFornecedor" FromRole="fornecedor" ToRole="enderecoFornecedor" />
+          <NavigationProperty Name="pedidoFornecedor" Relationship="Self.fornece" FromRole="fornecedor" ToRole="pedidoFornecedor" />
+        </EntityType>
+        <EntityType Name="pais">
+          <Key>
+            <PropertyRef Name="codigoPais" />
+          </Key>
+          <Property Name="codigoPais" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nomePais" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="produto" Relationship="Self.FKCodigoPais" FromRole="pais" ToRole="produto" />
+        </EntityType>
+        <EntityType Name="pedidoCliente">
+          <Key>
+            <PropertyRef Name="codigoPedido" />
+          </Key>
+          <Property Name="codigoPedido" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="dataPedido" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="statusPedido" Type="Boolean" />
+          <Property Name="statusPagamentoPedido" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="quantidade" Type="Int32" Nullable="false" />
+          <Property Name="precoUnitario" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="totalPedido" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <NavigationProperty Name="cliente" Relationship="Self.FKCodigoPedidoCliente" FromRole="pedidoCliente" ToRole="cliente" />
+          <NavigationProperty Name="produto" Relationship="Self.itensPedidoCliente" FromRole="pedidoCliente" ToRole="produto" />
+        </EntityType>
+        <EntityType Name="pedidoFornecedor">
+          <Key>
+            <PropertyRef Name="codigoPedidoFornecedor" />
+          </Key>
+          <Property Name="codigoPedidoFornecedor" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="totalPedidoFornecedor" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="quantidadePedidoFornecedor" Type="Int32" />
+          <Property Name="dataCompraPedido" Type="DateTime" Precision="0" />
+          <Property Name="precoUnitario" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="statusPedidofornecedor" Type="Boolean" />
+          <NavigationProperty Name="fornecedor" Relationship="Self.fornece" FromRole="pedidoFornecedor" ToRole="fornecedor" />
+        </EntityType>
+        <EntityType Name="perfil">
+          <Key>
+            <PropertyRef Name="codigoPerfil" />
+          </Key>
+          <Property Name="codigoPerfil" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="descricaoPerfil" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="usuario" Relationship="Self.fkCodigoPerfil" FromRole="perfil" ToRole="usuario" />
+        </EntityType>
+        <EntityType Name="produto">
+          <Key>
+            <PropertyRef Name="codigoProduto" />
+          </Key>
+          <Property Name="codigoProduto" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nome" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="descricao" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="uva" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="classe" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="teor_Alcolico" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="tipo" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="custoUnitário" Type="Decimal" Precision="10" Scale="0" Nullable="false" />
+          <Property Name="quantidadeEstoque" Type="Decimal" Precision="4" Scale="0" Nullable="false" />
+          <Property Name="precoVenda" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="unidade" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="dataValidade" Type="DateTime" Precision="0" />
+          <Property Name="codigoPais" Type="Int32" />
+          <Property Name="codigoSafra" Type="Int32" />
+          <Property Name="statusProduto" Type="Boolean" />
+          <NavigationProperty Name="pais" Relationship="Self.FKCodigoPais" FromRole="produto" ToRole="pais" />
+          <NavigationProperty Name="safra" Relationship="Self.FKCodigoSafra" FromRole="produto" ToRole="safra" />
+          <NavigationProperty Name="pedidoCliente" Relationship="Self.itensPedidoCliente" FromRole="produto" ToRole="pedidoCliente" />
+        </EntityType>
+        <EntityType Name="safra">
+          <Key>
+            <PropertyRef Name="codigoSafra" />
+          </Key>
+          <Property Name="codigoSafra" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="descricao" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="produto" Relationship="Self.FKCodigoSafra" FromRole="safra" ToRole="produto" />
+        </EntityType>
+        <EntityType Name="usuario">
+          <Key>
+            <PropertyRef Name="codigoUsuario" />
+          </Key>
+          <Property Name="codigoUsuario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="llogin" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="senha" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="cpfUsuario" Type="String" MaxLength="11" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="nomecompleto" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="statusUsuario" Type="Boolean" />
+          <Property Name="codigoPerfil" Type="Int32" />
+          <NavigationProperty Name="perfil" Relationship="Self.fkCodigoPerfil" FromRole="usuario" ToRole="perfil" />
+        </EntityType>
+        <Association Name="fkCodContatoCliente">
+          <End Role="contatoCliente" Type="Self.contatoCliente" Multiplicity="0..1" />
+          <End Role="cliente" Type="Self.cliente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="contatoCliente">
+              <PropertyRef Name="codigoContatoCliente" />
+            </Principal>
+            <Dependent Role="cliente">
+              <PropertyRef Name="codigoContatoCliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fkCodigoEnderecoCliente">
+          <End Role="enderecoCliente" Type="Self.enderecoCliente" Multiplicity="0..1" />
+          <End Role="cliente" Type="Self.cliente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="enderecoCliente">
+              <PropertyRef Name="codigoEnderecoCliente" />
+            </Principal>
+            <Dependent Role="cliente">
+              <PropertyRef Name="codigoEnderecoCliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKCodigoPedidoCliente">
+          <End Role="pedidoCliente" Type="Self.pedidoCliente" Multiplicity="0..1" />
+          <End Role="cliente" Type="Self.cliente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="pedidoCliente">
+              <PropertyRef Name="codigoPedido" />
+            </Principal>
+            <Dependent Role="cliente">
+              <PropertyRef Name="codigoPedidoCliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKCodigoEnderecoFornecedor">
+          <End Role="enderecoFornecedor" Type="Self.enderecoFornecedor" Multiplicity="0..1" />
+          <End Role="fornecedor" Type="Self.fornecedor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="enderecoFornecedor">
+              <PropertyRef Name="codigoEnderecoFornecedor" />
+            </Principal>
+            <Dependent Role="fornecedor">
+              <PropertyRef Name="codigoEnderecoFornecedor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKCodigoPais">
+          <End Role="pais" Type="Self.pais" Multiplicity="0..1" />
+          <End Role="produto" Type="Self.produto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="pais">
+              <PropertyRef Name="codigoPais" />
+            </Principal>
+            <Dependent Role="produto">
+              <PropertyRef Name="codigoPais" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fkCodigoPerfil">
+          <End Role="perfil" Type="Self.perfil" Multiplicity="0..1" />
+          <End Role="usuario" Type="Self.usuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="perfil">
+              <PropertyRef Name="codigoPerfil" />
+            </Principal>
+            <Dependent Role="usuario">
+              <PropertyRef Name="codigoPerfil" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKCodigoSafra">
+          <End Role="safra" Type="Self.safra" Multiplicity="0..1" />
+          <End Role="produto" Type="Self.produto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="safra">
+              <PropertyRef Name="codigoSafra" />
+            </Principal>
+            <Dependent Role="produto">
+              <PropertyRef Name="codigoSafra" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fornece">
+          <End Role="fornecedor" Type="Self.fornecedor" Multiplicity="*" />
+          <End Role="pedidoFornecedor" Type="Self.pedidoFornecedor" Multiplicity="*" />
+        </Association>
+        <Association Name="itensPedidoCliente">
+          <End Role="pedidoCliente" Type="Self.pedidoCliente" Multiplicity="*" />
+          <End Role="produto" Type="Self.produto" Multiplicity="*" />
+        </Association>
+        <EntityContainer Name="WinetechEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="cliente" EntityType="Self.cliente" />
+          <EntitySet Name="contatoCliente" EntityType="Self.contatoCliente" />
+          <EntitySet Name="enderecoCliente" EntityType="Self.enderecoCliente" />
+          <EntitySet Name="enderecoFornecedor" EntityType="Self.enderecoFornecedor" />
+          <EntitySet Name="fornecedor" EntityType="Self.fornecedor" />
+          <EntitySet Name="pais" EntityType="Self.pais" />
+          <EntitySet Name="pedidoCliente" EntityType="Self.pedidoCliente" />
+          <EntitySet Name="pedidoFornecedor" EntityType="Self.pedidoFornecedor" />
+          <EntitySet Name="perfil" EntityType="Self.perfil" />
+          <EntitySet Name="produto" EntityType="Self.produto" />
+          <EntitySet Name="safra" EntityType="Self.safra" />
+          <EntitySet Name="usuario" EntityType="Self.usuario" />
+          <AssociationSet Name="fkCodContatoCliente" Association="Self.fkCodContatoCliente">
+            <End Role="contatoCliente" EntitySet="contatoCliente" />
+            <End Role="cliente" EntitySet="cliente" />
+          </AssociationSet>
+          <AssociationSet Name="fkCodigoEnderecoCliente" Association="Self.fkCodigoEnderecoCliente">
+            <End Role="enderecoCliente" EntitySet="enderecoCliente" />
+            <End Role="cliente" EntitySet="cliente" />
+          </AssociationSet>
+          <AssociationSet Name="FKCodigoPedidoCliente" Association="Self.FKCodigoPedidoCliente">
+            <End Role="pedidoCliente" EntitySet="pedidoCliente" />
+            <End Role="cliente" EntitySet="cliente" />
+          </AssociationSet>
+          <AssociationSet Name="FKCodigoEnderecoFornecedor" Association="Self.FKCodigoEnderecoFornecedor">
+            <End Role="enderecoFornecedor" EntitySet="enderecoFornecedor" />
+            <End Role="fornecedor" EntitySet="fornecedor" />
+          </AssociationSet>
+          <AssociationSet Name="FKCodigoPais" Association="Self.FKCodigoPais">
+            <End Role="pais" EntitySet="pais" />
+            <End Role="produto" EntitySet="produto" />
+          </AssociationSet>
+          <AssociationSet Name="fkCodigoPerfil" Association="Self.fkCodigoPerfil">
+            <End Role="perfil" EntitySet="perfil" />
+            <End Role="usuario" EntitySet="usuario" />
+          </AssociationSet>
+          <AssociationSet Name="FKCodigoSafra" Association="Self.FKCodigoSafra">
+            <End Role="safra" EntitySet="safra" />
+            <End Role="produto" EntitySet="produto" />
+          </AssociationSet>
+          <AssociationSet Name="fornece" Association="Self.fornece">
+            <End Role="fornecedor" EntitySet="fornecedor" />
+            <End Role="pedidoFornecedor" EntitySet="pedidoFornecedor" />
+          </AssociationSet>
+          <AssociationSet Name="itensPedidoCliente" Association="Self.itensPedidoCliente">
+            <End Role="pedidoCliente" EntitySet="pedidoCliente" />
+            <End Role="produto" EntitySet="produto" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="WinetechModelStoreContainer" CdmEntityContainer="WinetechEntities">
+          <EntitySetMapping Name="cliente">
+            <EntityTypeMapping TypeName="Winetech.Model.cliente">
+              <MappingFragment StoreEntitySet="cliente">
+                <ScalarProperty Name="codigoCliente" ColumnName="codigoCliente" />
+                <ScalarProperty Name="razaosocial" ColumnName="razaosocial" />
+                <ScalarProperty Name="nomefantasia" ColumnName="nomefantasia" />
+                <ScalarProperty Name="nomecompleto" ColumnName="nomecompleto" />
+                <ScalarProperty Name="rg" ColumnName="rg" />
+                <ScalarProperty Name="cpf" ColumnName="cpf" />
+                <ScalarProperty Name="datanascimento" ColumnName="datanascimento" />
+                <ScalarProperty Name="cnpjcliente" ColumnName="cnpjcliente" />
+                <ScalarProperty Name="emailcliente" ColumnName="emailcliente" />
+                <ScalarProperty Name="statuscliente" ColumnName="statuscliente" />
+                <ScalarProperty Name="limitecredito" ColumnName="limitecredito" />
+                <ScalarProperty Name="codigoEnderecoCliente" ColumnName="codigoEnderecoCliente" />
+                <ScalarProperty Name="codigoContatoCliente" ColumnName="codigoContatoCliente" />
+                <ScalarProperty Name="codigoPedidoCliente" ColumnName="codigoPedidoCliente" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="contatoCliente">
+            <EntityTypeMapping TypeName="Winetech.Model.contatoCliente">
+              <MappingFragment StoreEntitySet="contatoCliente">
+                <ScalarProperty Name="codigoContatoCliente" ColumnName="codigoContatoCliente" />
+                <ScalarProperty Name="dddCliente" ColumnName="dddCliente" />
+                <ScalarProperty Name="numeroContatoCliente" ColumnName="numeroContatoCliente" />
+                <ScalarProperty Name="statusContatoCliente" ColumnName="statusContatoCliente" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="enderecoCliente">
+            <EntityTypeMapping TypeName="Winetech.Model.enderecoCliente">
+              <MappingFragment StoreEntitySet="enderecoCliente">
+                <ScalarProperty Name="codigoEnderecoCliente" ColumnName="codigoEnderecoCliente" />
+                <ScalarProperty Name="estado" ColumnName="estado" />
+                <ScalarProperty Name="cidade" ColumnName="cidade" />
+                <ScalarProperty Name="bairro" ColumnName="bairro" />
+                <ScalarProperty Name="CEP" ColumnName="CEP" />
+                <ScalarProperty Name="rua" ColumnName="rua" />
+                <ScalarProperty Name="numero" ColumnName="numero" />
+                <ScalarProperty Name="Complemento" ColumnName="Complemento" />
+                <ScalarProperty Name="statusEnderecoCliente" ColumnName="statusEnderecoCliente" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="enderecoFornecedor">
+            <EntityTypeMapping TypeName="Winetech.Model.enderecoFornecedor">
+              <MappingFragment StoreEntitySet="enderecoFornecedor">
+                <ScalarProperty Name="codigoEnderecoFornecedor" ColumnName="codigoEnderecoFornecedor" />
+                <ScalarProperty Name="estado" ColumnName="estado" />
+                <ScalarProperty Name="cidade" ColumnName="cidade" />
+                <ScalarProperty Name="bairro" ColumnName="bairro" />
+                <ScalarProperty Name="CEP" ColumnName="CEP" />
+                <ScalarProperty Name="rua" ColumnName="rua" />
+                <ScalarProperty Name="numero" ColumnName="numero" />
+                <ScalarProperty Name="complemento" ColumnName="complemento" />
+                <ScalarProperty Name="statusEnderecoFornecedor" ColumnName="statusEnderecoFornecedor" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="fornecedor">
+            <EntityTypeMapping TypeName="Winetech.Model.fornecedor">
+              <MappingFragment StoreEntitySet="fornecedor">
+                <ScalarProperty Name="codigoFornecedor" ColumnName="codigoFornecedor" />
+                <ScalarProperty Name="cnpjFornecedor" ColumnName="cnpjFornecedor" />
+                <ScalarProperty Name="razaoSocialFornecedor" ColumnName="razaoSocialFornecedor" />
+                <ScalarProperty Name="nomeFantasiaFornecedor" ColumnName="nomeFantasiaFornecedor" />
+                <ScalarProperty Name="emailFornecedor" ColumnName="emailFornecedor" />
+                <ScalarProperty Name="telefoneFornecedor" ColumnName="telefoneFornecedor" />
+                <ScalarProperty Name="statusFornecedor" ColumnName="statusFornecedor" />
+                <ScalarProperty Name="codigoEnderecoFornecedor" ColumnName="codigoEnderecoFornecedor" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="pais">
+            <EntityTypeMapping TypeName="Winetech.Model.pais">
+              <MappingFragment StoreEntitySet="pais">
+                <ScalarProperty Name="codigoPais" ColumnName="codigoPais" />
+                <ScalarProperty Name="nomePais" ColumnName="nomePais" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="pedidoCliente">
+            <EntityTypeMapping TypeName="Winetech.Model.pedidoCliente">
+              <MappingFragment StoreEntitySet="pedidoCliente">
+                <ScalarProperty Name="codigoPedido" ColumnName="codigoPedido" />
+                <ScalarProperty Name="dataPedido" ColumnName="dataPedido" />
+                <ScalarProperty Name="statusPedido" ColumnName="statusPedido" />
+                <ScalarProperty Name="statusPagamentoPedido" ColumnName="statusPagamentoPedido" />
+                <ScalarProperty Name="quantidade" ColumnName="quantidade" />
+                <ScalarProperty Name="precoUnitario" ColumnName="precoUnitario" />
+                <ScalarProperty Name="totalPedido" ColumnName="totalPedido" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="pedidoFornecedor">
+            <EntityTypeMapping TypeName="Winetech.Model.pedidoFornecedor">
+              <MappingFragment StoreEntitySet="pedidoFornecedor">
+                <ScalarProperty Name="codigoPedidoFornecedor" ColumnName="codigoPedidoFornecedor" />
+                <ScalarProperty Name="totalPedidoFornecedor" ColumnName="totalPedidoFornecedor" />
+                <ScalarProperty Name="quantidadePedidoFornecedor" ColumnName="quantidadePedidoFornecedor" />
+                <ScalarProperty Name="dataCompraPedido" ColumnName="dataCompraPedido" />
+                <ScalarProperty Name="precoUnitario" ColumnName="precoUnitario" />
+                <ScalarProperty Name="statusPedidofornecedor" ColumnName="statusPedidofornecedor" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="perfil">
+            <EntityTypeMapping TypeName="Winetech.Model.perfil">
+              <MappingFragment StoreEntitySet="perfil">
+                <ScalarProperty Name="codigoPerfil" ColumnName="codigoPerfil" />
+                <ScalarProperty Name="descricaoPerfil" ColumnName="descricaoPerfil" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="produto">
+            <EntityTypeMapping TypeName="Winetech.Model.produto">
+              <MappingFragment StoreEntitySet="produto">
+                <ScalarProperty Name="codigoProduto" ColumnName="codigoProduto" />
+                <ScalarProperty Name="nome" ColumnName="nome" />
+                <ScalarProperty Name="descricao" ColumnName="descricao" />
+                <ScalarProperty Name="uva" ColumnName="uva" />
+                <ScalarProperty Name="classe" ColumnName="classe" />
+                <ScalarProperty Name="teor_Alcolico" ColumnName="teor_Alcolico" />
+                <ScalarProperty Name="tipo" ColumnName="tipo" />
+                <ScalarProperty Name="custoUnitário" ColumnName="custoUnitário" />
+                <ScalarProperty Name="quantidadeEstoque" ColumnName="quantidadeEstoque" />
+                <ScalarProperty Name="precoVenda" ColumnName="precoVenda" />
+                <ScalarProperty Name="unidade" ColumnName="unidade" />
+                <ScalarProperty Name="dataValidade" ColumnName="dataValidade" />
+                <ScalarProperty Name="codigoPais" ColumnName="codigoPais" />
+                <ScalarProperty Name="codigoSafra" ColumnName="codigoSafra" />
+                <ScalarProperty Name="statusProduto" ColumnName="statusProduto" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="safra">
+            <EntityTypeMapping TypeName="Winetech.Model.safra">
+              <MappingFragment StoreEntitySet="safra">
+                <ScalarProperty Name="codigoSafra" ColumnName="codigoSafra" />
+                <ScalarProperty Name="descricao" ColumnName="descricao" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="usuario">
+            <EntityTypeMapping TypeName="Winetech.Model.usuario">
+              <MappingFragment StoreEntitySet="usuario">
+                <ScalarProperty Name="codigoUsuario" ColumnName="codigoUsuario" />
+                <ScalarProperty Name="llogin" ColumnName="llogin" />
+                <ScalarProperty Name="senha" ColumnName="senha" />
+                <ScalarProperty Name="cpfUsuario" ColumnName="cpfUsuario" />
+                <ScalarProperty Name="nomecompleto" ColumnName="nomecompleto" />
+                <ScalarProperty Name="statusUsuario" ColumnName="statusUsuario" />
+                <ScalarProperty Name="codigoPerfil" ColumnName="codigoPerfil" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="fornece" TypeName="Winetech.Model.fornece" StoreEntitySet="fornece">
+            <EndProperty Name="fornecedor">
+              <ScalarProperty Name="codigoFornecedor" ColumnName="codigoFornecedor" />
+            </EndProperty>
+            <EndProperty Name="pedidoFornecedor">
+              <ScalarProperty Name="codigoPedidoFornecedor" ColumnName="codigoPedidoFornecedor" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="itensPedidoCliente" TypeName="Winetech.Model.itensPedidoCliente" StoreEntitySet="itensPedidoCliente">
+            <EndProperty Name="pedidoCliente">
+              <ScalarProperty Name="codigoPedido" ColumnName="codigoPedido" />
+            </EndProperty>
+            <EndProperty Name="produto">
+              <ScalarProperty Name="codigoProduto" ColumnName="codigoProduto" />
+            </EndProperty>
+          </AssociationSetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
