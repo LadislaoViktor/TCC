@@ -190,14 +190,20 @@ namespace Winetech.View
 
         private void button1_Click(object sender, EventArgs e)
         {
-             this.Hide();
-             frmUsuários C = new frmUsuários();
-             C.Show();
-            if (C.IsDisposed == false)
+            Hide();
+            frmUsuários C = new frmUsuários();
+            if (Application.OpenForms.OfType<frmUsuários>().Count() == 0)
             {
-            
+                C.Show();
             }
-            this.Show();
+            if (Application.OpenForms.OfType<TelaInicial>().Count() == 0)
+            {
+                this.Show();
+            }
+            else {
+                TelaInicial T = new TelaInicial();
+                T.Show();
+            }
         }
 
         private void C_FormClosed(object sender, System.Windows.Forms.FormClosedEventArgs e)

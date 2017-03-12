@@ -18,7 +18,7 @@
     <Shape ID="DesignTable:pais" ZOrder="21" X="332" Y="872" Height="115" Width="168" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="64" />
     <Shape ID="DesignTable:pedidoCliente" ZOrder="20" X="655" Y="70" Height="210" Width="225" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="159" />
     <Shape ID="DesignTable:pedidoFornecedor" ZOrder="19" X="681" Y="573" Height="172" Width="251" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="121" />
-    <Shape ID="DesignTable:perfil" ZOrder="18" X="1872" Y="70" Height="134" Width="175" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="64" />
+    <Shape ID="DesignTable:perfil" ZOrder="18" X="1872" Y="70" Height="153" Width="175" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="64" />
     <Shape ID="DesignTable:produto" ZOrder="17" X="70" Y="70" Height="305" Width="192" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="254" />
     <Shape ID="DesignTable:safra" ZOrder="16" X="332" Y="1057" Height="115" Width="173" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="64" />
     <Shape ID="DesignTable:usuario" ZOrder="15" X="2117" Y="312" Height="210" Width="187" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="159" />
@@ -196,7 +196,7 @@
       <RoutePoints>
         <Point>
           <X>2030</X>
-          <Y>204</Y>
+          <Y>223</Y>
         </Point>
         <Point>
           <X>2030</X>

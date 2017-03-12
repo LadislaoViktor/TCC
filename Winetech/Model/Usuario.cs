@@ -6,7 +6,7 @@
 //     Manual changes to this file will be overwritten if the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-
+using System.Windows.Forms;
 namespace Winetech.Model
 {
     using System;
@@ -14,6 +14,8 @@ namespace Winetech.Model
     
     public partial class usuario
     {
+        private string v;
+
         public int codigoUsuario { get; set; }
         public string llogin { get; set; }
         public string senha { get; set; }
@@ -23,8 +25,9 @@ namespace Winetech.Model
         public Nullable<int> codigoPerfil { get; set; }
         public virtual perfil perfil { get; set; }
 
-        public usuario( string login,string senha,string cpf,string nome,bool status,int codigoperfil )
+        public usuario( int codigo,string login,string senha,string cpf,string nome,bool status,int codigoperfil )
         {
+            codigoUsuario = 8;
             llogin = login;
             this.senha = senha;
             cpfUsuario = cpf;
@@ -32,18 +35,27 @@ namespace Winetech.Model
             statusUsuario = status;
             codigoPerfil = codigoperfil;
         }
-        WinetechEntities ctx = new WinetechEntities();
+
+        public usuario(string nome)
+        {
+            nomecompleto = nome;
+        }
+
         public bool inserir(usuario u) {
+            WinetechEntities ctx = new WinetechEntities();
+            var usuario = u;
             try
             {
-                ctx.usuario.Add(u);
+                ctx.usuario.Add(usuario);
                 ctx.SaveChanges();
                 return true;
             }
             catch (Exception e) {
-                using System.Windows.Forms.MessageBox("Erro:", "Erro", e.ToString);
+                MessageBox.Show(e.ToString(),"Erro:",MessageBoxButtons.OK);
+                return false;
             }
         }
+        
     }
 
 }

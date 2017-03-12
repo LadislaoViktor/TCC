@@ -98,6 +98,7 @@
     <Compile Include="Model\fornecedor.cs">
       <DependentUpon>WinetechContext.tt</DependentUpon>
     </Compile>
+    <Compile Include="Model\ObservableListSource.cs" />
     <Compile Include="Model\pais.cs">
       <DependentUpon>WinetechContext.tt</DependentUpon>
     </Compile>
@@ -110,6 +111,7 @@
     <Compile Include="Model\perfil.cs">
       <DependentUpon>WinetechContext.tt</DependentUpon>
     </Compile>
+    <Compile Include="Model\PerfilContext.cs" />
     <Compile Include="Model\produto.cs">
       <DependentUpon>WinetechContext.tt</DependentUpon>
     </Compile>
@@ -291,6 +293,7 @@
       <DependentUpon>WinetechContext.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\Winetech.Model.usuario.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

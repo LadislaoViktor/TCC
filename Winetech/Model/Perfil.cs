@@ -6,24 +6,22 @@
 //     Manual changes to this file will be overwritten if the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using WinFormswithEFSample;
 
 namespace Winetech.Model
 {
-    using System;
-    using System.Collections.Generic;
     
-    public partial class perfil
+    public class perfil
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public perfil()
-        {
-            this.usuario = new HashSet<usuario>();
-        }
-    
+        private readonly ObservableListSource<perfil> umperfil = new ObservableListSource<perfil>();
+
         public int codigoPerfil { get; set; }
         public string descricaoPerfil { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<usuario> usuario { get; set; }
+        public virtual ObservableListSource<perfil> perfis {get { return perfis; } }
     }
 }

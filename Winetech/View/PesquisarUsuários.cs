@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using Winetech.Controler;
+using Winetech.Model;
 
 namespace Winetech.View
 {
@@ -25,16 +26,20 @@ namespace Winetech.View
 
         private void button1_Click(object sender, EventArgs e)
         {
-           /* usuario usuario = new usuario(txtBxPesquisarUsuarios.ToString());
+           usuario usuarios = new usuario(txtBxPesquisarUsuarios.ToString());
             ControleUsuarios C = new ControleUsuarios();
-            if (C.pesquisarUsuarios(usuario) == null)
+            if (C.verificaCampoPreenchido(usuarios) == false)
             {
                 MessageBox.Show("O nome não pode estar em branco!");
             }
             else {
-                MessageBox.Show("Prencher linhas da tabela.");
+                //C.pesquisarusuario(nome);
+                //if(ArrayList diferente de null)
+                //preenche grid
+                //else
+                //messagebox nome não enontrado
+                MessageBox.Show("Preencher Data Grid com o retorno da função!");
             }
-            */
         }
 
         private void frmPesquisarUsuários_FormClosing(object sender, FormClosingEventArgs e)

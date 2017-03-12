@@ -24,16 +24,16 @@ namespace Winetech.Controler
             else
                 return true;
         }
-       /* public List<Usuario> pesquisarUsuarios(usuario usuario) {
-            if (usuario.nomecompleto==null)
-            {
-                return null;
+        public bool verificaCampoPreenchido(usuario u)
+        {
+            if (u.nomecompleto == null){
+                return false;
             }
-            else {
-                List<usuario> Lista = new List<usuario>();
-                return Lista;
-            }
-                
-        }*/
+            else
+                return true;
+        }
+        public bool pesquisarUsuario(string nome) {
+            return true;
+        }
     }
 }

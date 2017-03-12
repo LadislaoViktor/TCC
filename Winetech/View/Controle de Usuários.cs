@@ -24,9 +24,9 @@ namespace Winetech.View
         }
         public DataTable opcaoPerfil()
         {
-            DataTable dtPerfil = new DataTable("Perfil");
-            using (SqlConnection Connection = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Winetech\Winetech\Winetech.mdf;Integrated Security=True;Connect Timeout=30;User Instance=False"))
-            using (SqlCommand Command = new SqlCommand("SELECT codigoPerfil,descricaoPerfil FROM dbo.perfil", Connection))
+            DataTable dtPerfil = new DataTable("perfil");
+            using (SqlConnection Connection = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDBFileName=C:\Winetech\Winetech\Winetech2.mdf ;Integrated Security=True;Connect Timeout=30;User Instance=False"))
+            using (SqlCommand Command = new SqlCommand("SELECT codigoPerfil,descricaoPerfil FROM perfil", Connection))
             {
                 Connection.Open();
                 dtPerfil.Load(Command.ExecuteReader());
@@ -35,7 +35,7 @@ namespace Winetech.View
         }
         private void btnInserir_Click(object sender, EventArgs e)
         {
-            usuario u = new usuario(txtBxLogin.ToString(), txtBxSenha.ToString(),txtBxCPF.Text.ToString(),txtBxNomeCompleto.ToString(),true,1);
+            usuario u = new usuario(1, txtBxLogin.ToString(), txtBxSenha.ToString(),txtBxCPF.Text.ToString(),txtBxNomeCompleto.ToString(),true,1);
             ControleUsuarios U = new ControleUsuarios();
             bool cadastro =U.cadastrarUsuários(u);
             if (cadastro == true)
@@ -45,7 +45,6 @@ namespace Winetech.View
             else
                 MessageBox.Show("Falha ao inserir: Verifique os dados e tente novamente!");
         }
-
         private void btnPesquisar_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -128,6 +127,18 @@ namespace Winetech.View
             if (MessageBox.Show("Deseja realmente fechar?", "Atenção", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
             {
                 e.Cancel = true;
+            }
+        }
+
+        private void btnLimparTela_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Deseja limpar todos os campos?", "Atenção", MessageBoxButtons.YesNo) == DialogResult.Yes) {
+                txtBxNomeCompleto.Text="";
+                txtBxCPF.Text = "";
+                txtBxLogin.Text = "";
+                txtBxSenha.Text = "";
+                rdBtnAtivo.Checked = false;
+                rdBtnInativo.Checked = false;
             }
         }
     }
