@@ -20,6 +20,12 @@ namespace Winetech.Model
     {
         private readonly ObservableListSource<perfil> umperfil = new ObservableListSource<perfil>();
 
+        public perfil(int codigoPerfil, string descricaoPerfil)
+        {
+            this.codigoPerfil = codigoPerfil;
+            this.descricaoPerfil = descricaoPerfil;
+        }
+
         public int codigoPerfil { get; set; }
         public string descricaoPerfil { get; set; }
         public virtual ObservableListSource<perfil> perfis {get { return perfis; } }

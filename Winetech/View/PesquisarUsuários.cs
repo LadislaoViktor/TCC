@@ -14,14 +14,12 @@ namespace Winetech.View
 
         private void frmPesquisarUsuários_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'winetechDataSet.usuario' table. You can move, or remove it, as needed.
-            //this.usuarioTableAdapter.Fill(this.winetechDataSet.usuario);
-
+            WinetechEntities ctx = new WinetechEntities();
         }
 
         private void dtGdVDadosUsuários_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            dtGdVDadosUsuários.DataSource = usuarioBindingSource;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -33,12 +31,15 @@ namespace Winetech.View
                 MessageBox.Show("O nome não pode estar em branco!");
             }
             else {
-                //C.pesquisarusuario(nome);
-                //if(ArrayList diferente de null)
-                //preenche grid
-                //else
-                //messagebox nome não enontrado
-                MessageBox.Show("Preencher Data Grid com o retorno da função!");
+                C.pesquisarusuario(txtBxPesquisarUsuarios.Text.ToString());
+                if (C.pesquisarusuario(txtBxPesquisarUsuarios.Text.ToString()) == null)
+                {
+                    MessageBox.Show("Usuário não encontrado!");
+                }
+                else {
+                    dtGdVDadosUsuários.DataSource = C.pesquisarusuario(txtBxPesquisarUsuarios.Text.ToString());
+                }
+                
             }
         }
 

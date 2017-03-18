@@ -32,12 +32,6 @@
             this.lblNome = new System.Windows.Forms.Label();
             this.txtBxPesquisarUsuarios = new System.Windows.Forms.TextBox();
             this.dtGdVDadosUsuários = new System.Windows.Forms.DataGridView();
-            this.usuarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.winetechDataSet = new Winetech.WinetechDataSet();
-            this.usuarioTableAdapter = new Winetech.WinetechDataSetTableAdapters.usuarioTableAdapter();
-            this.btnPesquisarUsuarios = new System.Windows.Forms.Button();
-            this.btnEditar = new System.Windows.Forms.Button();
-            this.btnExcluir = new System.Windows.Forms.Button();
             this.codigoUsuarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lloginDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.senhaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -45,6 +39,12 @@
             this.nomecompletoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.statusUsuarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.codigoPerfilDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.usuarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.winetechDataSet = new Winetech.WinetechDataSet();
+            this.usuarioTableAdapter = new Winetech.WinetechDataSetTableAdapters.usuarioTableAdapter();
+            this.btnPesquisarUsuarios = new System.Windows.Forms.Button();
+            this.btnEditar = new System.Windows.Forms.Button();
+            this.btnExcluir = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtGdVDadosUsuários)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.winetechDataSet)).BeginInit();
@@ -68,10 +68,13 @@
             // 
             // dtGdVDadosUsuários
             // 
+            this.dtGdVDadosUsuários.AllowUserToOrderColumns = true;
             this.dtGdVDadosUsuários.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dtGdVDadosUsuários.AutoGenerateColumns = false;
+            this.dtGdVDadosUsuários.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtGdVDadosUsuários.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dtGdVDadosUsuários.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtGdVDadosUsuários.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.codigoUsuarioDataGridViewTextBoxColumn,
@@ -87,6 +90,48 @@
             this.dtGdVDadosUsuários.Size = new System.Drawing.Size(538, 239);
             this.dtGdVDadosUsuários.TabIndex = 2;
             this.dtGdVDadosUsuários.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtGdVDadosUsuários_CellContentClick);
+            // 
+            // codigoUsuarioDataGridViewTextBoxColumn
+            // 
+            this.codigoUsuarioDataGridViewTextBoxColumn.DataPropertyName = "codigoUsuario";
+            this.codigoUsuarioDataGridViewTextBoxColumn.HeaderText = "Código";
+            this.codigoUsuarioDataGridViewTextBoxColumn.Name = "codigoUsuarioDataGridViewTextBoxColumn";
+            // 
+            // lloginDataGridViewTextBoxColumn
+            // 
+            this.lloginDataGridViewTextBoxColumn.DataPropertyName = "llogin";
+            this.lloginDataGridViewTextBoxColumn.HeaderText = "Login";
+            this.lloginDataGridViewTextBoxColumn.Name = "lloginDataGridViewTextBoxColumn";
+            // 
+            // senhaDataGridViewTextBoxColumn
+            // 
+            this.senhaDataGridViewTextBoxColumn.DataPropertyName = "senha";
+            this.senhaDataGridViewTextBoxColumn.HeaderText = "Senha";
+            this.senhaDataGridViewTextBoxColumn.Name = "senhaDataGridViewTextBoxColumn";
+            // 
+            // cpfUsuarioDataGridViewTextBoxColumn
+            // 
+            this.cpfUsuarioDataGridViewTextBoxColumn.DataPropertyName = "cpfUsuario";
+            this.cpfUsuarioDataGridViewTextBoxColumn.HeaderText = "CPF";
+            this.cpfUsuarioDataGridViewTextBoxColumn.Name = "cpfUsuarioDataGridViewTextBoxColumn";
+            // 
+            // nomecompletoDataGridViewTextBoxColumn
+            // 
+            this.nomecompletoDataGridViewTextBoxColumn.DataPropertyName = "nomecompleto";
+            this.nomecompletoDataGridViewTextBoxColumn.HeaderText = "Nome Completo";
+            this.nomecompletoDataGridViewTextBoxColumn.Name = "nomecompletoDataGridViewTextBoxColumn";
+            // 
+            // statusUsuarioDataGridViewTextBoxColumn
+            // 
+            this.statusUsuarioDataGridViewTextBoxColumn.DataPropertyName = "statusUsuario";
+            this.statusUsuarioDataGridViewTextBoxColumn.HeaderText = "Status";
+            this.statusUsuarioDataGridViewTextBoxColumn.Name = "statusUsuarioDataGridViewTextBoxColumn";
+            // 
+            // codigoPerfilDataGridViewTextBoxColumn
+            // 
+            this.codigoPerfilDataGridViewTextBoxColumn.DataPropertyName = "codigoPerfil";
+            this.codigoPerfilDataGridViewTextBoxColumn.HeaderText = "Perfil";
+            this.codigoPerfilDataGridViewTextBoxColumn.Name = "codigoPerfilDataGridViewTextBoxColumn";
             // 
             // usuarioBindingSource
             // 
@@ -131,48 +176,6 @@
             this.btnExcluir.TabIndex = 5;
             this.btnExcluir.Text = "Excluir";
             this.btnExcluir.UseVisualStyleBackColor = true;
-            // 
-            // codigoUsuarioDataGridViewTextBoxColumn
-            // 
-            this.codigoUsuarioDataGridViewTextBoxColumn.DataPropertyName = "codigoUsuario";
-            this.codigoUsuarioDataGridViewTextBoxColumn.HeaderText = "codigoUsuario";
-            this.codigoUsuarioDataGridViewTextBoxColumn.Name = "codigoUsuarioDataGridViewTextBoxColumn";
-            // 
-            // lloginDataGridViewTextBoxColumn
-            // 
-            this.lloginDataGridViewTextBoxColumn.DataPropertyName = "llogin";
-            this.lloginDataGridViewTextBoxColumn.HeaderText = "llogin";
-            this.lloginDataGridViewTextBoxColumn.Name = "lloginDataGridViewTextBoxColumn";
-            // 
-            // senhaDataGridViewTextBoxColumn
-            // 
-            this.senhaDataGridViewTextBoxColumn.DataPropertyName = "senha";
-            this.senhaDataGridViewTextBoxColumn.HeaderText = "senha";
-            this.senhaDataGridViewTextBoxColumn.Name = "senhaDataGridViewTextBoxColumn";
-            // 
-            // cpfUsuarioDataGridViewTextBoxColumn
-            // 
-            this.cpfUsuarioDataGridViewTextBoxColumn.DataPropertyName = "cpfUsuario";
-            this.cpfUsuarioDataGridViewTextBoxColumn.HeaderText = "cpfUsuario";
-            this.cpfUsuarioDataGridViewTextBoxColumn.Name = "cpfUsuarioDataGridViewTextBoxColumn";
-            // 
-            // nomecompletoDataGridViewTextBoxColumn
-            // 
-            this.nomecompletoDataGridViewTextBoxColumn.DataPropertyName = "nomecompleto";
-            this.nomecompletoDataGridViewTextBoxColumn.HeaderText = "nomecompleto";
-            this.nomecompletoDataGridViewTextBoxColumn.Name = "nomecompletoDataGridViewTextBoxColumn";
-            // 
-            // statusUsuarioDataGridViewTextBoxColumn
-            // 
-            this.statusUsuarioDataGridViewTextBoxColumn.DataPropertyName = "statusUsuario";
-            this.statusUsuarioDataGridViewTextBoxColumn.HeaderText = "statusUsuario";
-            this.statusUsuarioDataGridViewTextBoxColumn.Name = "statusUsuarioDataGridViewTextBoxColumn";
-            // 
-            // codigoPerfilDataGridViewTextBoxColumn
-            // 
-            this.codigoPerfilDataGridViewTextBoxColumn.DataPropertyName = "codigoPerfil";
-            this.codigoPerfilDataGridViewTextBoxColumn.HeaderText = "codigoPerfil";
-            this.codigoPerfilDataGridViewTextBoxColumn.Name = "codigoPerfilDataGridViewTextBoxColumn";
             // 
             // frmPesquisarUsuários
             // 

@@ -35,15 +35,26 @@ namespace Winetech.View
         }
         private void btnInserir_Click(object sender, EventArgs e)
         {
-            usuario u = new usuario(1, txtBxLogin.ToString(), txtBxSenha.ToString(),txtBxCPF.Text.ToString(),txtBxNomeCompleto.ToString(),true,1);
-            ControleUsuarios U = new ControleUsuarios();
-            bool cadastro =U.cadastrarUsuários(u);
-            if (cadastro == true)
+            perfil p = new perfil(Convert.ToInt32(cbBxPerfil.SelectedValue), cbBxPerfil.SelectedText);
+            ComboBox Combo = new ComboBox();
+            Combo.ValueMember = cbBxPerfil.ValueMember;
+            Combo.DisplayMember = cbBxPerfil.DisplayMember;
+            if (Combo.ValueMember == string.Empty || Combo.DisplayMember == string.Empty)
             {
-                MessageBox.Show("Inserido com sucesso!");
+                MessageBox.Show("Ta nula a bagaça.");
             }
-            else
-                MessageBox.Show("Falha ao inserir: Verifique os dados e tente novamente!");
+            else {
+                usuario umusuario = new usuario();
+                umusuario =  new usuario(1, txtBxLogin.ToString(), txtBxSenha.ToString(), txtBxCPF.Text.ToString(), txtBxNomeCompleto.ToString(),true, umusuario.perfil.codigoPerfil = Convert.ToInt32(cbBxPerfil.ValueMember), umusuario.perfil.descricaoPerfil = "Administrador");
+                ControleUsuarios U = new ControleUsuarios();
+                bool cadastro = U.cadastrarUsuários(umusuario);
+                if (cadastro == true)
+                {
+                    MessageBox.Show("Inserido com sucesso!");
+                }
+                else
+                    MessageBox.Show("Falha ao inserir: Todos os campos são obrigatórios!");
+            }
         }
         private void btnPesquisar_Click(object sender, EventArgs e)
         {

@@ -19,21 +19,30 @@ namespace Winetech.Controler
         }
         public bool validarCamposObrigatorios(usuario usuario)
         {
-            if (usuario.nomecompleto.Length==0)
+            if (usuario.nomecompleto.ToString() == string.Empty)
+                return false;
+            if (usuario.cpfUsuario.ToString()==string.Empty)
+                return false;
+            if(usuario.llogin.ToString()==string.Empty)
                 return false;
             else
                 return true;
         }
         public bool verificaCampoPreenchido(usuario u)
         {
-            if (u.nomecompleto == null){
+            if (u.nomecompleto.ToString()== "System.Windows.Forms.TextBox, Text: " ){
                 return false;
             }
             else
                 return true;
         }
-        public bool pesquisarUsuario(string nome) {
-            return true;
+        public List<usuario> pesquisarusuario(string nome)
+        {
+            usuario u = new usuario(nome);
+            return u.pesquisarUsuario(nome);
+        }
+
+
         }
     }
-}
+

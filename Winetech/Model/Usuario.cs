@@ -11,21 +11,32 @@ namespace Winetech.Model
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
+    using System.Linq;
     public partial class usuario
     {
         private string v;
+        private string descricaoPerfil;
 
+        //private string v;
+        [Key]
         public int codigoUsuario { get; set; }
+        [Required]
         public string llogin { get; set; }
+        [Required]
         public string senha { get; set; }
+        [Required]
+        [MaxLength(11), MinLength(11)]
         public string cpfUsuario { get; set; }
+        [Required]
         public string nomecompleto { get; set; }
         public Nullable<bool> statusUsuario { get; set; }
+        [ForeignKey("perfil")]
         public Nullable<int> codigoPerfil { get; set; }
-        public virtual perfil perfil { get; set; }
+        public perfil perfil { get; set; }
 
-        public usuario( int codigo,string login,string senha,string cpf,string nome,bool status,int codigoperfil )
+        public usuario(int codigo, string login, string senha, string cpf, string nome, bool status, int codigoperfil)
         {
             codigoUsuario = 8;
             llogin = login;
@@ -41,21 +52,61 @@ namespace Winetech.Model
             nomecompleto = nome;
         }
 
-        public bool inserir(usuario u) {
+        public usuario(int codigoUsuario, string llogin, string senha, string cpfUsuario, string nomecompleto, bool? statusUsuario, int? codigoPerfil)
+        {
+            this.codigoUsuario = codigoUsuario;
+            this.llogin = llogin;
+            this.senha = senha;
+            this.cpfUsuario = cpfUsuario;
+            this.nomecompleto = nomecompleto;
+            this.statusUsuario = statusUsuario;
+            this.codigoPerfil = codigoPerfil;
+        }
+
+        public usuario(int codigo, string login, string senha, string cpf, string nome, bool status, int codigoperfil, string v) : this(codigo, login, senha, cpf, nome, status, codigoperfil)
+        {
+            this.v = v;
+        }
+
+        public usuario()
+        {
+        }
+
+        public usuario(int codigoUsuario, string llogin, string senha, string cpfUsuario, string nomecompleto, bool? statusUsuario, int? codigoPerfil, string descricaoPerfil) : this(codigoUsuario, llogin, senha, cpfUsuario, nomecompleto, statusUsuario, codigoPerfil)
+        {
+            this.descricaoPerfil = descricaoPerfil;
+        }
+
+        public bool inserir(usuario u)
+        {
             WinetechEntities ctx = new WinetechEntities();
-            var usuario = u;
+            var usuario = new usuario(u.codigoUsuario, u.llogin, u.senha, u.cpfUsuario, u.nomecompleto, u.statusUsuario, u.perfil.codigoPerfil, u.perfil.descricaoPerfil);
             try
             {
                 ctx.usuario.Add(usuario);
                 ctx.SaveChanges();
                 return true;
             }
-            catch (Exception e) {
-                MessageBox.Show(e.ToString(),"Erro:",MessageBoxButtons.OK);
+            catch (Exception e)
+            {
+                MessageBox.Show(e.ToString(), "Erro:", MessageBoxButtons.OK);
                 return false;
             }
         }
-        
-    }
+        public List<usuario> pesquisarUsuario(string nome)
+        {
+            using (var db = new WinetechEntities())
+            {
+                List<usuario> lista = new List<usuario>();
+                var query = from u in db.usuario where u.nomecompleto.Equals(nome) select u;
+                foreach (var u in query)
+                {
+                    lista.Add(u);
+                }
+                return lista;
+            }
 
+        }
+
+    }
 }
