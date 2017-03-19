@@ -5,6 +5,7 @@ namespace Winetech.Controler
 {
     class ControleUsuarios
     {
+       
         public bool cadastrarUsuários(usuario usuario)
         {
               if (validarCamposObrigatorios(usuario) == true)
@@ -30,7 +31,7 @@ namespace Winetech.Controler
         }
         public bool verificaCampoPreenchido(usuario u)
         {
-            if (u.nomecompleto.ToString()== "System.Windows.Forms.TextBox, Text: " ){
+            if (u.nomecompleto.ToString()== string.Empty ){
                 return false;
             }
             else
@@ -41,8 +42,6 @@ namespace Winetech.Controler
             usuario u = new usuario(nome);
             return u.pesquisarUsuario(nome);
         }
-
-
         }
     }
 
