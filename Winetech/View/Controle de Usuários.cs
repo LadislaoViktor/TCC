@@ -35,27 +35,17 @@ namespace Winetech.View
         }
         private void btnInserir_Click(object sender, EventArgs e)
         {
-            perfil p = new perfil(Convert.ToInt32(cbBxPerfil.SelectedValue), cbBxPerfil.SelectedText);
-            ComboBox Combo = new ComboBox();
-            Combo.ValueMember = cbBxPerfil.ValueMember;
-            Combo.DisplayMember = cbBxPerfil.DisplayMember;
-            if (Combo.ValueMember == string.Empty || Combo.DisplayMember == string.Empty)
-            {
-                MessageBox.Show("Ta nula a bagaça.");
-            }
-            else {
-                usuario umusuario = new usuario();
-                umusuario =  new usuario(1, txtBxLogin.ToString(), txtBxSenha.ToString(), txtBxCPF.Text.ToString(), txtBxNomeCompleto.ToString(),true, umusuario.perfil.codigoPerfil = Convert.ToInt32(cbBxPerfil.ValueMember), umusuario.perfil.descricaoPerfil = "Administrador");
-                ControleUsuarios U = new ControleUsuarios();
-                bool cadastro = U.cadastrarUsuários(umusuario);
-                if (cadastro == true)
-                {
-                    MessageBox.Show("Inserido com sucesso!");
-                }
-                else
-                    MessageBox.Show("Falha ao inserir: Todos os campos são obrigatórios!");
-            }
-        }
+            perfil p = new perfil(Convert.ToInt32(cbBxPerfil.SelectedIndex), cbBxPerfil.SelectedText.ToString());
+            usuario umusuario = new usuario(5, txtBxLogin.Text.ToString(), txtBxSenha.Text.ToString(), txtBxCPF.Text.ToString(), txtBxNomeCompleto.Text.ToString(), rdBtnAtivo.Checked,p );
+                    ControleUsuarios U = new ControleUsuarios();
+                    bool cadastro = U.cadastrarUsuários(umusuario);
+                    if (cadastro == true)
+                    {
+                        MessageBox.Show("Inserido com sucesso!");
+                    }
+                    else
+                        MessageBox.Show("Falha ao inserir: Todos os campos são obrigatórios!");
+         }
         private void btnPesquisar_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -151,6 +141,26 @@ namespace Winetech.View
                 rdBtnAtivo.Checked = false;
                 rdBtnInativo.Checked = false;
             }
+        }
+
+        private void cbBxPerfil_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void chkBxResetarSenha_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblPerfil_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblStatus_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

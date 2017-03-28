@@ -16,13 +16,25 @@ namespace Winetech.Model
     public partial class WinetechEntities : DbContext
     {
         public WinetechEntities()
-            : base("name=WinetechEntities")
+            : base("Data Source=(LocalDB)\\MSSQLLocalDB;Integrated Security=True;Connect Timeout=30;User Instance=False;")
         {
+
         }
     
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            throw new UnintentionalCodeFirstException();
+            modelBuilder.Entity<usuario>().ToTable("usuario");
+            modelBuilder.Entity<perfil>().ToTable("perfil");
+            modelBuilder.Entity<cliente>().ToTable("cliente");
+            modelBuilder.Entity<enderecoCliente>().ToTable("enderecoCliente");
+            modelBuilder.Entity<contatoCliente>().ToTable("contatoCliente");
+            modelBuilder.Entity<pedidoCliente>().ToTable("pedidoCliente");
+            modelBuilder.Entity<produto>().ToTable("produto");
+            modelBuilder.Entity<pais>().ToTable("pais");
+            modelBuilder.Entity<safra>().ToTable("safra");
+            modelBuilder.Entity<fornecedor>().ToTable("fornecedor");
+            modelBuilder.Entity<pedidoFornecedor>().ToTable("enderecoCliente");
+
         }
     
         public virtual DbSet<cliente> cliente { get; set; }

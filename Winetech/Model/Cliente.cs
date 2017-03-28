@@ -10,34 +10,15 @@
 namespace Winetech.Model
 {
     using System;
+    using System;
     using System.Collections.Generic;
-    
-    public partial class cliente
+    using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
+    using System.Linq;
+
+    public partial class cliente : WinetechEntities
     {
-        private string nomeFantasiaCliente;
-        private string nomeCompletoCliente;
-        private string cnpj;
-        private string email;
-        private double limiteCredito;
-        private int codigoPedido;
-
-        public cliente(string razaoSocial, string nomeFantasiaCliente, string nomeCompletoCliente, string rG, string cPF, DateTime dataNascimento, string cnpj, string email, bool statusCliente, double limiteCredito, int codigoPedido, int codigoEnderecoCliente, int codigoContatoCliente)
-        {
-            razaosocial = razaoSocial;
-            this.nomeFantasiaCliente = nomeFantasiaCliente;
-            this.nomeCompletoCliente = nomeCompletoCliente;
-            rg = rG;
-            cpf = cPF;
-            datanascimento = dataNascimento;
-            this.cnpj = cnpj;
-            this.email = email;
-            statuscliente = statusCliente;
-            this.limiteCredito = limiteCredito;
-            this.codigoPedido = codigoPedido;
-            this.codigoEnderecoCliente = codigoEnderecoCliente;
-            this.codigoContatoCliente = codigoContatoCliente;
-        }
-
+        [Key]
         public int codigoCliente { get; set; }
         public string razaosocial { get; set; }
         public string nomefantasia { get; set; }
@@ -49,12 +30,34 @@ namespace Winetech.Model
         public string emailcliente { get; set; }
         public Nullable<bool> statuscliente { get; set; }
         public decimal limitecredito { get; set; }
+        [ForeignKey("enderecoCliente") ]
         public Nullable<int> codigoEnderecoCliente { get; set; }
+        [ForeignKey("contatoCliente")]
         public Nullable<int> codigoContatoCliente { get; set; }
+        [ForeignKey("pedidoCliente")]
         public Nullable<int> codigoPedidoCliente { get; set; }
-    
+
         public virtual contatoCliente contatoCliente { get; set; }
         public virtual enderecoCliente enderecoCliente { get; set; }
         public virtual pedidoCliente pedidoCliente { get; set; }
+
+        public cliente(string razaoSocial, string nomeFantasiaCliente, string nomeCompletoCliente, string rG, string cPF, DateTime dataNascimento, string cnpj, string email, bool statusCliente, double limiteCredito, int codigoPedido, int codigoEnderecoCliente, int codigoContatoCliente)
+        {
+            razaosocial = razaoSocial;
+            nomefantasia = nomeFantasiaCliente;
+            nomecompleto = nomeCompletoCliente;
+            rg = rG;
+            cpf = cPF;
+            datanascimento = dataNascimento;
+            cnpjcliente = cnpj;
+            emailcliente = email;
+            statuscliente = statusCliente;
+            limitecredito =Convert.ToDecimal(limiteCredito);
+            codigoPedidoCliente = codigoPedido;
+            this.codigoEnderecoCliente = codigoEnderecoCliente;
+            this.codigoContatoCliente = codigoContatoCliente;
+        }
+
+        
     }
 }

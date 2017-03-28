@@ -8,6 +8,8 @@
 //------------------------------------------------------------------------------
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,7 +20,11 @@ namespace Winetech.Model
     
     public class perfil
     {
-        private readonly ObservableListSource<perfil> umperfil = new ObservableListSource<perfil>();
+        //[ForeignKey ("usuario") ]
+        [Key ]
+        public int codigoPerfil { get; set; }
+        public string descricaoPerfil { get; set; }
+        public virtual usuario usuarios { get { return usuarios; } }
 
         public perfil(int codigoPerfil, string descricaoPerfil)
         {
@@ -26,8 +32,8 @@ namespace Winetech.Model
             this.descricaoPerfil = descricaoPerfil;
         }
 
-        public int codigoPerfil { get; set; }
-        public string descricaoPerfil { get; set; }
-        public virtual ObservableListSource<perfil> perfis {get { return perfis; } }
+        public perfil()
+        {
+        }
     }
 }

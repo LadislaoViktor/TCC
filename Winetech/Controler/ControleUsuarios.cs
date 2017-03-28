@@ -24,7 +24,7 @@ namespace Winetech.Controler
                 return false;
             if (usuario.cpfUsuario.ToString()==string.Empty)
                 return false;
-            if(usuario.llogin.ToString()==string.Empty)
+            if(verificaCampoPreenchido(usuario)==false)
                 return false;
             else
                 return true;
@@ -36,6 +36,14 @@ namespace Winetech.Controler
             }
             else
                 return true;
+        }
+        public bool verificaSenhaEContrasenha(string senha,string contraSenha)
+        {
+            if (senha == contraSenha)
+            {
+                return true;
+            }
+            return false;
         }
         public List<usuario> pesquisarusuario(string nome)
         {

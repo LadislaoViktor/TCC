@@ -12,39 +12,34 @@ namespace Winetech.Model
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
-    using System.ComponentModel.DataAnnotations.Schema;
     using System.Linq;
-    public partial class usuario
+    public partial class usuario : WinetechEntities
     {
-        private string v;
-        private string descricaoPerfil;
+        
 
-        //private string v;
         [Key]
         public int codigoUsuario { get; set; }
-        [Required]
+        //[Required]
         public string llogin { get; set; }
-        [Required]
+        //[Required]
         public string senha { get; set; }
-        [Required]
+        //[Required]
         [MaxLength(11), MinLength(11)]
         public string cpfUsuario { get; set; }
-        [Required]
+        //[Required]
         public string nomecompleto { get; set; }
-        public Nullable<bool> statusUsuario { get; set; }
-        [ForeignKey("perfil")]
-        public Nullable<int> codigoPerfil { get; set; }
-        public perfil perfil { get; set; }
+        public bool statusUsuario { get; set; }
+        public virtual perfil perfil { get; set; }
 
-        public usuario(int codigo, string login, string senha, string cpf, string nome, bool status, int codigoperfil)
+        public usuario(int codigo, string login, string senha, string cpf, string nome, bool status,perfil perf)
         {
-            codigoUsuario = 8;
+            codigoUsuario = codigo;
             llogin = login;
             this.senha = senha;
             cpfUsuario = cpf;
             nomecompleto = nome;
             statusUsuario = status;
-            codigoPerfil = codigoperfil;
+            perfil = perf;
         }
 
         public usuario(string nome)
@@ -52,7 +47,7 @@ namespace Winetech.Model
             nomecompleto = nome;
         }
 
-        public usuario(int codigoUsuario, string llogin, string senha, string cpfUsuario, string nomecompleto, bool? statusUsuario, int? codigoPerfil)
+        public usuario(int codigoUsuario, string llogin, string senha, string cpfUsuario, string nomecompleto, bool statusUsuario)
         {
             this.codigoUsuario = codigoUsuario;
             this.llogin = llogin;
@@ -60,27 +55,38 @@ namespace Winetech.Model
             this.cpfUsuario = cpfUsuario;
             this.nomecompleto = nomecompleto;
             this.statusUsuario = statusUsuario;
-            this.codigoPerfil = codigoPerfil;
         }
-
-        public usuario(int codigo, string login, string senha, string cpf, string nome, bool status, int codigoperfil, string v) : this(codigo, login, senha, cpf, nome, status, codigoperfil)
-        {
-            this.v = v;
-        }
-
         public usuario()
         {
+
         }
 
-        public usuario(int codigoUsuario, string llogin, string senha, string cpfUsuario, string nomecompleto, bool? statusUsuario, int? codigoPerfil, string descricaoPerfil) : this(codigoUsuario, llogin, senha, cpfUsuario, nomecompleto, statusUsuario, codigoPerfil)
+        public usuario(int codigoUsuario, string llogin, string senha, string cpfUsuario, string nomecompleto, bool statusUsuario, int codigoPerfil, string descricaoPerfil)
         {
-            this.descricaoPerfil = descricaoPerfil;
+            this.codigoUsuario = codigoUsuario;
+            this.llogin = llogin;
+            this.senha = senha;
+            this.cpfUsuario = cpfUsuario;
+            this.nomecompleto = nomecompleto;
+            this.statusUsuario = statusUsuario;
+            perfil p = new perfil(codigoPerfil,descricaoPerfil);
+            p.codigoPerfil = codigoPerfil;
+            p.descricaoPerfil = descricaoPerfil;
+        }
+
+        public usuario(string nome, string senha, string cpfUsuario, string nomecompleto, bool statusUsuario, perfil perfil) : this(nome)
+        {
+            this.senha = senha;
+            this.cpfUsuario = cpfUsuario;
+            this.nomecompleto = nomecompleto;
+            this.statusUsuario = statusUsuario;
+            this.perfil = perfil;
         }
 
         public bool inserir(usuario u)
         {
             WinetechEntities ctx = new WinetechEntities();
-            var usuario = new usuario(u.codigoUsuario, u.llogin, u.senha, u.cpfUsuario, u.nomecompleto, u.statusUsuario, u.perfil.codigoPerfil, u.perfil.descricaoPerfil);
+            var usuario = new usuario(u.llogin, u.senha, u.cpfUsuario, u.nomecompleto, u.statusUsuario,u.perfil);
             try
             {
                 ctx.usuario.Add(usuario);
